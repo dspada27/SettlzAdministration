@@ -1,0 +1,504 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="masterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Facebooks">
+          <Key>
+            <PropertyRef Name="FacebookId" />
+          </Key>
+          <Property Name="FacebookId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TimesShared" Type="bigint" />
+        </EntityType>
+        <EntityType Name="Options">
+          <Key>
+            <PropertyRef Name="OptionsId" />
+          </Key>
+          <Property Name="OptionsId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Option1" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Option2" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Option3" Type="nvarchar(max)" />
+          <Property Name="Option4" Type="nvarchar(max)" />
+          <Property Name="Vote_VotesId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Polls">
+          <Key>
+            <PropertyRef Name="PollId" />
+          </Key>
+          <Property Name="PollId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Argument" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ReportCount" Type="smallint" Nullable="false" />
+          <Property Name="PollStatus" Type="bit" Nullable="false" />
+          <Property Name="ExpiryDate" Type="datetime" Nullable="false" />
+          <Property Name="CategoryCategoryId" Type="smallint" Nullable="false" />
+          <Property Name="Option_OptionsId" Type="bigint" Nullable="false" />
+          <Property Name="Twitter_TwitterId" Type="bigint" Nullable="false" />
+          <Property Name="Facebook_FacebookId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'master.dbo.PollUser' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="PollUser">
+          <Key>
+            <PropertyRef Name="Polls_PollId" />
+            <PropertyRef Name="Users_UserId" />
+          </Key>
+          <Property Name="Polls_PollId" Type="bigint" Nullable="false" />
+          <Property Name="Users_UserId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Twitters">
+          <Key>
+            <PropertyRef Name="TwitterId" />
+          </Key>
+          <Property Name="TwitterId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TimesShared" Type="bigint" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FacebookAccount" Type="nvarchar(max)" />
+          <Property Name="TwitterAccount" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Votes">
+          <Key>
+            <PropertyRef Name="VotesId" />
+          </Key>
+          <Property Name="VotesId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Vote1" Type="bigint" Nullable="false" />
+          <Property Name="Vote2" Type="bigint" Nullable="false" />
+          <Property Name="Vote3" Type="bigint" />
+          <Property Name="Vote4" Type="bigint" />
+        </EntityType>
+        <Association Name="FK_CategoryPoll">
+          <End Role="Categories" Type="Self.Categories" Multiplicity="1" />
+          <End Role="Polls" Type="Self.Polls" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="Polls">
+              <PropertyRef Name="CategoryCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OptionsVotes">
+          <End Role="Votes" Type="Self.Votes" Multiplicity="1" />
+          <End Role="Options" Type="Self.Options" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Votes">
+              <PropertyRef Name="VotesId" />
+            </Principal>
+            <Dependent Role="Options">
+              <PropertyRef Name="Vote_VotesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PollFacebook">
+          <End Role="Facebooks" Type="Self.Facebooks" Multiplicity="1" />
+          <End Role="Polls" Type="Self.Polls" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Facebooks">
+              <PropertyRef Name="FacebookId" />
+            </Principal>
+            <Dependent Role="Polls">
+              <PropertyRef Name="Facebook_FacebookId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PollOptions">
+          <End Role="Options" Type="Self.Options" Multiplicity="1" />
+          <End Role="Polls" Type="Self.Polls" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Options">
+              <PropertyRef Name="OptionsId" />
+            </Principal>
+            <Dependent Role="Polls">
+              <PropertyRef Name="Option_OptionsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PollTwitter">
+          <End Role="Twitters" Type="Self.Twitters" Multiplicity="1" />
+          <End Role="Polls" Type="Self.Polls" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Twitters">
+              <PropertyRef Name="TwitterId" />
+            </Principal>
+            <Dependent Role="Polls">
+              <PropertyRef Name="Twitter_TwitterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PollUser_Poll">
+          <End Role="Polls" Type="Self.Polls" Multiplicity="1" />
+          <End Role="PollUser" Type="Self.PollUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Polls">
+              <PropertyRef Name="PollId" />
+            </Principal>
+            <Dependent Role="PollUser">
+              <PropertyRef Name="Polls_PollId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PollUser_User">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="PollUser" Type="Self.PollUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="PollUser">
+              <PropertyRef Name="Users_UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="masterModelStoreContainer">
+          <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Facebooks" EntityType="Self.Facebooks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Options" EntityType="Self.Options" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Polls" EntityType="Self.Polls" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Twitters" EntityType="Self.Twitters" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Votes" EntityType="Self.Votes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PollUser" EntityType="Self.PollUser" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PollUser].[Polls_PollId] AS [Polls_PollId], 
+    [PollUser].[Users_UserId] AS [Users_UserId]
+    FROM [dbo].[PollUser] AS [PollUser]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_CategoryPoll" Association="Self.FK_CategoryPoll">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Polls" EntitySet="Polls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OptionsVotes" Association="Self.FK_OptionsVotes">
+            <End Role="Votes" EntitySet="Votes" />
+            <End Role="Options" EntitySet="Options" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PollFacebook" Association="Self.FK_PollFacebook">
+            <End Role="Facebooks" EntitySet="Facebooks" />
+            <End Role="Polls" EntitySet="Polls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PollOptions" Association="Self.FK_PollOptions">
+            <End Role="Options" EntitySet="Options" />
+            <End Role="Polls" EntitySet="Polls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PollTwitter" Association="Self.FK_PollTwitter">
+            <End Role="Twitters" EntitySet="Twitters" />
+            <End Role="Polls" EntitySet="Polls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PollUser_Poll" Association="Self.FK_PollUser_Poll">
+            <End Role="Polls" EntitySet="Polls" />
+            <End Role="PollUser" EntitySet="PollUser" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PollUser_User" Association="Self.FK_PollUser_User">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="PollUser" EntitySet="PollUser" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="masterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Polls" Relationship="Self.FK_CategoryPoll" FromRole="Categories" ToRole="Polls" />
+        </EntityType>
+        <EntityType Name="Facebook">
+          <Key>
+            <PropertyRef Name="FacebookId" />
+          </Key>
+          <Property Name="FacebookId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TimesShared" Type="Int64" />
+          <NavigationProperty Name="Polls" Relationship="Self.FK_PollFacebook" FromRole="Facebooks" ToRole="Polls" />
+        </EntityType>
+        <EntityType Name="Option">
+          <Key>
+            <PropertyRef Name="OptionsId" />
+          </Key>
+          <Property Name="OptionsId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Option1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Option2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Option3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Option4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Vote_VotesId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Vote" Relationship="Self.FK_OptionsVotes" FromRole="Options" ToRole="Votes" />
+          <NavigationProperty Name="Polls" Relationship="Self.FK_PollOptions" FromRole="Options" ToRole="Polls" />
+        </EntityType>
+        <EntityType Name="Poll">
+          <Key>
+            <PropertyRef Name="PollId" />
+          </Key>
+          <Property Name="PollId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Argument" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ReportCount" Type="Int16" Nullable="false" />
+          <Property Name="PollStatus" Type="Boolean" Nullable="false" />
+          <Property Name="ExpiryDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CategoryCategoryId" Type="Int16" Nullable="false" />
+          <Property Name="Option_OptionsId" Type="Int64" Nullable="false" />
+          <Property Name="Twitter_TwitterId" Type="Int64" Nullable="false" />
+          <Property Name="Facebook_FacebookId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Category" Relationship="Self.FK_CategoryPoll" FromRole="Polls" ToRole="Categories" />
+          <NavigationProperty Name="Facebook" Relationship="Self.FK_PollFacebook" FromRole="Polls" ToRole="Facebooks" />
+          <NavigationProperty Name="Option" Relationship="Self.FK_PollOptions" FromRole="Polls" ToRole="Options" />
+          <NavigationProperty Name="Twitter" Relationship="Self.FK_PollTwitter" FromRole="Polls" ToRole="Twitters" />
+          <NavigationProperty Name="Users" Relationship="Self.PollUser" FromRole="Polls" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Twitter">
+          <Key>
+            <PropertyRef Name="TwitterId" />
+          </Key>
+          <Property Name="TwitterId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TimesShared" Type="Int64" />
+          <NavigationProperty Name="Polls" Relationship="Self.FK_PollTwitter" FromRole="Twitters" ToRole="Polls" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FacebookAccount" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TwitterAccount" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Polls" Relationship="Self.PollUser" FromRole="Users" ToRole="Polls" />
+        </EntityType>
+        <EntityType Name="Vote">
+          <Key>
+            <PropertyRef Name="VotesId" />
+          </Key>
+          <Property Name="VotesId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Vote1" Type="Int64" Nullable="false" />
+          <Property Name="Vote2" Type="Int64" Nullable="false" />
+          <Property Name="Vote3" Type="Int64" />
+          <Property Name="Vote4" Type="Int64" />
+          <NavigationProperty Name="Options" Relationship="Self.FK_OptionsVotes" FromRole="Votes" ToRole="Options" />
+        </EntityType>
+        <Association Name="FK_CategoryPoll">
+          <End Role="Categories" Type="Self.Category" Multiplicity="1" />
+          <End Role="Polls" Type="Self.Poll" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="Polls">
+              <PropertyRef Name="CategoryCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PollFacebook">
+          <End Role="Facebooks" Type="Self.Facebook" Multiplicity="1" />
+          <End Role="Polls" Type="Self.Poll" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Facebooks">
+              <PropertyRef Name="FacebookId" />
+            </Principal>
+            <Dependent Role="Polls">
+              <PropertyRef Name="Facebook_FacebookId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OptionsVotes">
+          <End Role="Votes" Type="Self.Vote" Multiplicity="1" />
+          <End Role="Options" Type="Self.Option" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Votes">
+              <PropertyRef Name="VotesId" />
+            </Principal>
+            <Dependent Role="Options">
+              <PropertyRef Name="Vote_VotesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PollOptions">
+          <End Role="Options" Type="Self.Option" Multiplicity="1" />
+          <End Role="Polls" Type="Self.Poll" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Options">
+              <PropertyRef Name="OptionsId" />
+            </Principal>
+            <Dependent Role="Polls">
+              <PropertyRef Name="Option_OptionsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PollTwitter">
+          <End Role="Twitters" Type="Self.Twitter" Multiplicity="1" />
+          <End Role="Polls" Type="Self.Poll" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Twitters">
+              <PropertyRef Name="TwitterId" />
+            </Principal>
+            <Dependent Role="Polls">
+              <PropertyRef Name="Twitter_TwitterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PollUser">
+          <End Role="Polls" Type="Self.Poll" Multiplicity="*" />
+          <End Role="Users" Type="Self.User" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="masterEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Categories" EntityType="Self.Category" />
+          <EntitySet Name="Facebooks" EntityType="Self.Facebook" />
+          <EntitySet Name="Options" EntityType="Self.Option" />
+          <EntitySet Name="Polls" EntityType="Self.Poll" />
+          <EntitySet Name="Twitters" EntityType="Self.Twitter" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="Votes" EntityType="Self.Vote" />
+          <AssociationSet Name="FK_CategoryPoll" Association="Self.FK_CategoryPoll">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Polls" EntitySet="Polls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PollFacebook" Association="Self.FK_PollFacebook">
+            <End Role="Facebooks" EntitySet="Facebooks" />
+            <End Role="Polls" EntitySet="Polls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OptionsVotes" Association="Self.FK_OptionsVotes">
+            <End Role="Votes" EntitySet="Votes" />
+            <End Role="Options" EntitySet="Options" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PollOptions" Association="Self.FK_PollOptions">
+            <End Role="Options" EntitySet="Options" />
+            <End Role="Polls" EntitySet="Polls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PollTwitter" Association="Self.FK_PollTwitter">
+            <End Role="Twitters" EntitySet="Twitters" />
+            <End Role="Polls" EntitySet="Polls" />
+          </AssociationSet>
+          <AssociationSet Name="PollUser" Association="Self.PollUser">
+            <End Role="Polls" EntitySet="Polls" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="masterModelStoreContainer" CdmEntityContainer="masterEntities">
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="masterModel.Category">
+              <MappingFragment StoreEntitySet="Categories">
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Facebooks">
+            <EntityTypeMapping TypeName="masterModel.Facebook">
+              <MappingFragment StoreEntitySet="Facebooks">
+                <ScalarProperty Name="FacebookId" ColumnName="FacebookId" />
+                <ScalarProperty Name="TimesShared" ColumnName="TimesShared" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Options">
+            <EntityTypeMapping TypeName="masterModel.Option">
+              <MappingFragment StoreEntitySet="Options">
+                <ScalarProperty Name="OptionsId" ColumnName="OptionsId" />
+                <ScalarProperty Name="Option1" ColumnName="Option1" />
+                <ScalarProperty Name="Option2" ColumnName="Option2" />
+                <ScalarProperty Name="Option3" ColumnName="Option3" />
+                <ScalarProperty Name="Option4" ColumnName="Option4" />
+                <ScalarProperty Name="Vote_VotesId" ColumnName="Vote_VotesId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Polls">
+            <EntityTypeMapping TypeName="masterModel.Poll">
+              <MappingFragment StoreEntitySet="Polls">
+                <ScalarProperty Name="PollId" ColumnName="PollId" />
+                <ScalarProperty Name="Argument" ColumnName="Argument" />
+                <ScalarProperty Name="ReportCount" ColumnName="ReportCount" />
+                <ScalarProperty Name="PollStatus" ColumnName="PollStatus" />
+                <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+                <ScalarProperty Name="CategoryCategoryId" ColumnName="CategoryCategoryId" />
+                <ScalarProperty Name="Option_OptionsId" ColumnName="Option_OptionsId" />
+                <ScalarProperty Name="Twitter_TwitterId" ColumnName="Twitter_TwitterId" />
+                <ScalarProperty Name="Facebook_FacebookId" ColumnName="Facebook_FacebookId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Twitters">
+            <EntityTypeMapping TypeName="masterModel.Twitter">
+              <MappingFragment StoreEntitySet="Twitters">
+                <ScalarProperty Name="TwitterId" ColumnName="TwitterId" />
+                <ScalarProperty Name="TimesShared" ColumnName="TimesShared" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="masterModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="FacebookAccount" ColumnName="FacebookAccount" />
+                <ScalarProperty Name="TwitterAccount" ColumnName="TwitterAccount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Votes">
+            <EntityTypeMapping TypeName="masterModel.Vote">
+              <MappingFragment StoreEntitySet="Votes">
+                <ScalarProperty Name="VotesId" ColumnName="VotesId" />
+                <ScalarProperty Name="Vote1" ColumnName="Vote1" />
+                <ScalarProperty Name="Vote2" ColumnName="Vote2" />
+                <ScalarProperty Name="Vote3" ColumnName="Vote3" />
+                <ScalarProperty Name="Vote4" ColumnName="Vote4" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="PollUser" TypeName="masterModel.PollUser" StoreEntitySet="PollUser">
+            <EndProperty Name="Polls">
+              <ScalarProperty Name="PollId" ColumnName="Polls_PollId" />
+            </EndProperty>
+            <EndProperty Name="Users">
+              <ScalarProperty Name="UserId" ColumnName="Users_UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
