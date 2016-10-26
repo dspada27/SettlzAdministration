@@ -34,29 +34,34 @@
             this.TabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.deletebtn1 = new System.Windows.Forms.Button();
+            this.updatebtn = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.combolbl = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.masterDataSet = new SettlzAdmininstration.masterDataSet();
-            this.pollsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pollsTableAdapter = new SettlzAdmininstration.masterDataSetTableAdapters.PollsTableAdapter();
-            this.updatebtn = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.masterDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.masterDataSet1 = new SettlzAdmininstration.masterDataSet1();
-            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usersTableAdapter = new SettlzAdmininstration.masterDataSet1TableAdapters.UsersTableAdapter();
-            this.updatebtn2 = new System.Windows.Forms.Button();
             this.deletebtn = new System.Windows.Forms.Button();
-            this.deletebtn1 = new System.Windows.Forms.Button();
+            this.updatebtn2 = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Selected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.userIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.facebookAccountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.twitterAccountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Banned = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.usersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.masterDataSet3 = new SettlzAdmininstration.masterDataSet3();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.masterDataSet1 = new SettlzAdmininstration.masterDataSet1();
+            this.usersTableAdapter = new SettlzAdmininstration.masterDataSet1TableAdapters.UsersTableAdapter();
+            this.usersTableAdapter1 = new SettlzAdmininstration.masterDataSet3TableAdapters.UsersTableAdapter();
+            this.pollsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.masterDataSet = new SettlzAdmininstration.masterDataSet();
+            this.pollsTableAdapter = new SettlzAdmininstration.masterDataSetTableAdapters.PollsTableAdapter();
+            this.masterDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.pollIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.argumentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,19 +69,20 @@
             this.pollStatusDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.expiryDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryCategoryIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.optionOptionsIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.twitterTwitterIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.facebookFacebookIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.User_UserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TabControl.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.masterDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pollsBindingSource)).BeginInit();
+            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.masterDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.masterDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.masterDataSet3)).BeginInit();
+            this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.masterDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pollsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.masterDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.masterDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -106,7 +112,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1003, 367);
+            this.tabPage1.Size = new System.Drawing.Size(1054, 432);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Home";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -125,6 +131,45 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Polls";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // deletebtn1
+            // 
+            this.deletebtn1.Location = new System.Drawing.Point(186, 94);
+            this.deletebtn1.Name = "deletebtn1";
+            this.deletebtn1.Size = new System.Drawing.Size(75, 23);
+            this.deletebtn1.TabIndex = 5;
+            this.deletebtn1.Text = "Delete";
+            this.deletebtn1.UseVisualStyleBackColor = true;
+            this.deletebtn1.Click += new System.EventHandler(this.deletebtn1_Click);
+            // 
+            // updatebtn
+            // 
+            this.updatebtn.Location = new System.Drawing.Point(21, 95);
+            this.updatebtn.Name = "updatebtn";
+            this.updatebtn.Size = new System.Drawing.Size(75, 23);
+            this.updatebtn.TabIndex = 4;
+            this.updatebtn.Text = "Update";
+            this.updatebtn.UseVisualStyleBackColor = true;
+            this.updatebtn.Click += new System.EventHandler(this.updatebtn_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Select,
+            this.pollIdDataGridViewTextBoxColumn,
+            this.argumentDataGridViewTextBoxColumn,
+            this.reportCountDataGridViewTextBoxColumn,
+            this.pollStatusDataGridViewCheckBoxColumn,
+            this.expiryDateDataGridViewTextBoxColumn,
+            this.categoryCategoryIdDataGridViewTextBoxColumn,
+            this.User_UserId});
+            this.dataGridView1.DataSource = this.pollsBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 141);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(1033, 285);
+            this.dataGridView1.TabIndex = 3;
             // 
             // combolbl
             // 
@@ -160,95 +205,15 @@
             this.tabPage3.Text = "Users";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // tabPage4
+            // deletebtn
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1003, 367);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Reports";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Select,
-            this.pollIdDataGridViewTextBoxColumn,
-            this.argumentDataGridViewTextBoxColumn,
-            this.reportCountDataGridViewTextBoxColumn,
-            this.pollStatusDataGridViewCheckBoxColumn,
-            this.expiryDateDataGridViewTextBoxColumn,
-            this.categoryCategoryIdDataGridViewTextBoxColumn,
-            this.optionOptionsIdDataGridViewTextBoxColumn,
-            this.twitterTwitterIdDataGridViewTextBoxColumn,
-            this.facebookFacebookIdDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.pollsBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 141);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1033, 285);
-            this.dataGridView1.TabIndex = 3;
-            // 
-            // masterDataSet
-            // 
-            this.masterDataSet.DataSetName = "masterDataSet";
-            this.masterDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // pollsBindingSource
-            // 
-            this.pollsBindingSource.DataMember = "Polls";
-            this.pollsBindingSource.DataSource = this.masterDataSet;
-            // 
-            // pollsTableAdapter
-            // 
-            this.pollsTableAdapter.ClearBeforeFill = true;
-            // 
-            // updatebtn
-            // 
-            this.updatebtn.Location = new System.Drawing.Point(21, 95);
-            this.updatebtn.Name = "updatebtn";
-            this.updatebtn.Size = new System.Drawing.Size(75, 23);
-            this.updatebtn.TabIndex = 4;
-            this.updatebtn.Text = "Update";
-            this.updatebtn.UseVisualStyleBackColor = true;
-            this.updatebtn.Click += new System.EventHandler(this.updatebtn_Click);
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Selected,
-            this.userIdDataGridViewTextBoxColumn,
-            this.passwordDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
-            this.facebookAccountDataGridViewTextBoxColumn,
-            this.twitterAccountDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.usersBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(169, 118);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(665, 304);
-            this.dataGridView2.TabIndex = 0;
-            // 
-            // masterDataSetBindingSource
-            // 
-            this.masterDataSetBindingSource.DataSource = this.masterDataSet;
-            this.masterDataSetBindingSource.Position = 0;
-            // 
-            // masterDataSet1
-            // 
-            this.masterDataSet1.DataSetName = "masterDataSet1";
-            this.masterDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // usersBindingSource
-            // 
-            this.usersBindingSource.DataMember = "Users";
-            this.usersBindingSource.DataSource = this.masterDataSet1;
-            // 
-            // usersTableAdapter
-            // 
-            this.usersTableAdapter.ClearBeforeFill = true;
+            this.deletebtn.Location = new System.Drawing.Point(269, 89);
+            this.deletebtn.Name = "deletebtn";
+            this.deletebtn.Size = new System.Drawing.Size(75, 23);
+            this.deletebtn.TabIndex = 2;
+            this.deletebtn.Text = "Delete";
+            this.deletebtn.UseVisualStyleBackColor = true;
+            this.deletebtn.Click += new System.EventHandler(this.deletebtn_Click);
             // 
             // updatebtn2
             // 
@@ -260,25 +225,23 @@
             this.updatebtn2.UseVisualStyleBackColor = true;
             this.updatebtn2.Click += new System.EventHandler(this.updatebtn2_Click);
             // 
-            // deletebtn
+            // dataGridView2
             // 
-            this.deletebtn.Location = new System.Drawing.Point(269, 89);
-            this.deletebtn.Name = "deletebtn";
-            this.deletebtn.Size = new System.Drawing.Size(75, 23);
-            this.deletebtn.TabIndex = 2;
-            this.deletebtn.Text = "Delete";
-            this.deletebtn.UseVisualStyleBackColor = true;
-            this.deletebtn.Click += new System.EventHandler(this.deletebtn_Click);
-            // 
-            // deletebtn1
-            // 
-            this.deletebtn1.Location = new System.Drawing.Point(186, 94);
-            this.deletebtn1.Name = "deletebtn1";
-            this.deletebtn1.Size = new System.Drawing.Size(75, 23);
-            this.deletebtn1.TabIndex = 5;
-            this.deletebtn1.Text = "Delete";
-            this.deletebtn1.UseVisualStyleBackColor = true;
-            this.deletebtn1.Click += new System.EventHandler(this.deletebtn1_Click);
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.userIdDataGridViewTextBoxColumn,
+            this.passwordDataGridViewTextBoxColumn,
+            this.emailDataGridViewTextBoxColumn,
+            this.facebookAccountDataGridViewTextBoxColumn,
+            this.twitterAccountDataGridViewTextBoxColumn,
+            this.Banned,
+            this.Selected});
+            this.dataGridView2.DataSource = this.usersBindingSource1;
+            this.dataGridView2.Location = new System.Drawing.Point(113, 118);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(744, 304);
+            this.dataGridView2.TabIndex = 0;
             // 
             // Selected
             // 
@@ -318,6 +281,76 @@
             this.twitterAccountDataGridViewTextBoxColumn.DataPropertyName = "TwitterAccount";
             this.twitterAccountDataGridViewTextBoxColumn.HeaderText = "TwitterAccount";
             this.twitterAccountDataGridViewTextBoxColumn.Name = "twitterAccountDataGridViewTextBoxColumn";
+            // 
+            // Banned
+            // 
+            this.Banned.DataPropertyName = "Banned";
+            this.Banned.HeaderText = "Banned";
+            this.Banned.Name = "Banned";
+            // 
+            // usersBindingSource1
+            // 
+            this.usersBindingSource1.DataMember = "Users";
+            this.usersBindingSource1.DataSource = this.masterDataSet3;
+            // 
+            // masterDataSet3
+            // 
+            this.masterDataSet3.DataSetName = "masterDataSet3";
+            this.masterDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.reportViewer1);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(1054, 432);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Reports";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Location = new System.Drawing.Point(123, 125);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(685, 304);
+            this.reportViewer1.TabIndex = 0;
+            // 
+            // usersBindingSource
+            // 
+            this.usersBindingSource.DataMember = "Users";
+            this.usersBindingSource.DataSource = this.masterDataSet1;
+            // 
+            // masterDataSet1
+            // 
+            this.masterDataSet1.DataSetName = "masterDataSet1";
+            this.masterDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // usersTableAdapter
+            // 
+            this.usersTableAdapter.ClearBeforeFill = true;
+            // 
+            // usersTableAdapter1
+            // 
+            this.usersTableAdapter1.ClearBeforeFill = true;
+            // 
+            // pollsBindingSource
+            // 
+            this.pollsBindingSource.DataMember = "Polls";
+            this.pollsBindingSource.DataSource = this.masterDataSet;
+            // 
+            // masterDataSet
+            // 
+            this.masterDataSet.DataSetName = "masterDataSet";
+            this.masterDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pollsTableAdapter
+            // 
+            this.pollsTableAdapter.ClearBeforeFill = true;
+            // 
+            // masterDataSetBindingSource
+            // 
+            this.masterDataSetBindingSource.DataSource = this.masterDataSet;
+            this.masterDataSetBindingSource.Position = 0;
             // 
             // Select
             // 
@@ -363,23 +396,11 @@
             this.categoryCategoryIdDataGridViewTextBoxColumn.HeaderText = "CategoryCategoryId";
             this.categoryCategoryIdDataGridViewTextBoxColumn.Name = "categoryCategoryIdDataGridViewTextBoxColumn";
             // 
-            // optionOptionsIdDataGridViewTextBoxColumn
+            // User_UserId
             // 
-            this.optionOptionsIdDataGridViewTextBoxColumn.DataPropertyName = "Option_OptionsId";
-            this.optionOptionsIdDataGridViewTextBoxColumn.HeaderText = "Option_OptionsId";
-            this.optionOptionsIdDataGridViewTextBoxColumn.Name = "optionOptionsIdDataGridViewTextBoxColumn";
-            // 
-            // twitterTwitterIdDataGridViewTextBoxColumn
-            // 
-            this.twitterTwitterIdDataGridViewTextBoxColumn.DataPropertyName = "Twitter_TwitterId";
-            this.twitterTwitterIdDataGridViewTextBoxColumn.HeaderText = "Twitter_TwitterId";
-            this.twitterTwitterIdDataGridViewTextBoxColumn.Name = "twitterTwitterIdDataGridViewTextBoxColumn";
-            // 
-            // facebookFacebookIdDataGridViewTextBoxColumn
-            // 
-            this.facebookFacebookIdDataGridViewTextBoxColumn.DataPropertyName = "Facebook_FacebookId";
-            this.facebookFacebookIdDataGridViewTextBoxColumn.HeaderText = "Facebook_FacebookId";
-            this.facebookFacebookIdDataGridViewTextBoxColumn.Name = "facebookFacebookIdDataGridViewTextBoxColumn";
+            this.User_UserId.DataPropertyName = "User_UserId";
+            this.User_UserId.HeaderText = "User_UserId";
+            this.User_UserId.Name = "User_UserId";
             // 
             // AdminForm
             // 
@@ -393,14 +414,17 @@
             this.TabControl.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.masterDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pollsBindingSource)).EndInit();
+            this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.masterDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.masterDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.masterDataSet3)).EndInit();
+            this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.masterDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pollsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.masterDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.masterDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -420,7 +444,6 @@
         private System.Windows.Forms.BindingSource pollsBindingSource;
         private masterDataSetTableAdapters.PollsTableAdapter pollsTableAdapter;
         private System.Windows.Forms.Button updatebtn;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.BindingSource masterDataSetBindingSource;
         private masterDataSet1 masterDataSet1;
         private System.Windows.Forms.BindingSource usersBindingSource;
@@ -428,6 +451,18 @@
         private System.Windows.Forms.Button updatebtn2;
         private System.Windows.Forms.Button deletebtn;
         private System.Windows.Forms.Button deletebtn1;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private masterDataSet3 masterDataSet3;
+        private System.Windows.Forms.BindingSource usersBindingSource1;
+        private masterDataSet3TableAdapters.UsersTableAdapter usersTableAdapter1;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Selected;
+        private System.Windows.Forms.DataGridViewTextBoxColumn userIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn facebookAccountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn twitterAccountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Banned;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Select;
         private System.Windows.Forms.DataGridViewTextBoxColumn pollIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn argumentDataGridViewTextBoxColumn;
@@ -435,14 +470,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn pollStatusDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn expiryDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn categoryCategoryIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn optionOptionsIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn twitterTwitterIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn facebookFacebookIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Selected;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn facebookAccountDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn twitterAccountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn User_UserId;
     }
 }

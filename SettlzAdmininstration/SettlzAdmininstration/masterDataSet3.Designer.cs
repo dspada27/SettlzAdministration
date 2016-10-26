@@ -20,17 +20,17 @@ namespace SettlzAdmininstration {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("masterDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("masterDataSet3")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class masterDataSet : global::System.Data.DataSet {
+    public partial class masterDataSet3 : global::System.Data.DataSet {
         
-        private PollsDataTable tablePolls;
+        private UsersDataTable tableUsers;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public masterDataSet() {
+        public masterDataSet3() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace SettlzAdmininstration {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected masterDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected masterDataSet3(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace SettlzAdmininstration {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Polls"] != null)) {
-                    base.Tables.Add(new PollsDataTable(ds.Tables["Polls"]));
+                if ((ds.Tables["Users"] != null)) {
+                    base.Tables.Add(new UsersDataTable(ds.Tables["Users"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace SettlzAdmininstration {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public PollsDataTable Polls {
+        public UsersDataTable Users {
             get {
-                return this.tablePolls;
+                return this.tableUsers;
             }
         }
         
@@ -127,7 +127,7 @@ namespace SettlzAdmininstration {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            masterDataSet cln = ((masterDataSet)(base.Clone()));
+            masterDataSet3 cln = ((masterDataSet3)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace SettlzAdmininstration {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Polls"] != null)) {
-                    base.Tables.Add(new PollsDataTable(ds.Tables["Polls"]));
+                if ((ds.Tables["Users"] != null)) {
+                    base.Tables.Add(new UsersDataTable(ds.Tables["Users"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace SettlzAdmininstration {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tablePolls = ((PollsDataTable)(base.Tables["Polls"]));
+            this.tableUsers = ((UsersDataTable)(base.Tables["Users"]));
             if ((initTable == true)) {
-                if ((this.tablePolls != null)) {
-                    this.tablePolls.InitVars();
+                if ((this.tableUsers != null)) {
+                    this.tableUsers.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace SettlzAdmininstration {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "masterDataSet";
+            this.DataSetName = "masterDataSet3";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/masterDataSet.xsd";
+            this.Namespace = "http://tempuri.org/masterDataSet3.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tablePolls = new PollsDataTable();
-            base.Tables.Add(this.tablePolls);
+            this.tableUsers = new UsersDataTable();
+            base.Tables.Add(this.tableUsers);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializePolls() {
+        private bool ShouldSerializeUsers() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace SettlzAdmininstration {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            masterDataSet ds = new masterDataSet();
+            masterDataSet3 ds = new masterDataSet3();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,39 +270,31 @@ namespace SettlzAdmininstration {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void PollsRowChangeEventHandler(object sender, PollsRowChangeEvent e);
+        public delegate void UsersRowChangeEventHandler(object sender, UsersRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class PollsDataTable : global::System.Data.TypedTableBase<PollsRow> {
+        public partial class UsersDataTable : global::System.Data.TypedTableBase<UsersRow> {
             
-            private global::System.Data.DataColumn columnPollId;
+            private global::System.Data.DataColumn columnUserId;
             
-            private global::System.Data.DataColumn columnArgument;
+            private global::System.Data.DataColumn columnPassword;
             
-            private global::System.Data.DataColumn columnReportCount;
+            private global::System.Data.DataColumn columnEmail;
             
-            private global::System.Data.DataColumn columnPollStatus;
+            private global::System.Data.DataColumn columnFacebookAccount;
             
-            private global::System.Data.DataColumn columnExpiryDate;
+            private global::System.Data.DataColumn columnTwitterAccount;
             
-            private global::System.Data.DataColumn columnCategoryCategoryId;
-            
-            private global::System.Data.DataColumn columnOption_OptionsId;
-            
-            private global::System.Data.DataColumn columnTwitter_TwitterId;
-            
-            private global::System.Data.DataColumn columnFacebook_FacebookId;
-            
-            private global::System.Data.DataColumn columnUser_UserId;
+            private global::System.Data.DataColumn columnBanned;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PollsDataTable() {
-                this.TableName = "Polls";
+            public UsersDataTable() {
+                this.TableName = "Users";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -310,7 +302,7 @@ namespace SettlzAdmininstration {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal PollsDataTable(global::System.Data.DataTable table) {
+            internal UsersDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -327,88 +319,56 @@ namespace SettlzAdmininstration {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected PollsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected UsersDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PollIdColumn {
+            public global::System.Data.DataColumn UserIdColumn {
                 get {
-                    return this.columnPollId;
+                    return this.columnUserId;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ArgumentColumn {
+            public global::System.Data.DataColumn PasswordColumn {
                 get {
-                    return this.columnArgument;
+                    return this.columnPassword;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ReportCountColumn {
+            public global::System.Data.DataColumn EmailColumn {
                 get {
-                    return this.columnReportCount;
+                    return this.columnEmail;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PollStatusColumn {
+            public global::System.Data.DataColumn FacebookAccountColumn {
                 get {
-                    return this.columnPollStatus;
+                    return this.columnFacebookAccount;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ExpiryDateColumn {
+            public global::System.Data.DataColumn TwitterAccountColumn {
                 get {
-                    return this.columnExpiryDate;
+                    return this.columnTwitterAccount;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CategoryCategoryIdColumn {
+            public global::System.Data.DataColumn BannedColumn {
                 get {
-                    return this.columnCategoryCategoryId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Option_OptionsIdColumn {
-                get {
-                    return this.columnOption_OptionsId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Twitter_TwitterIdColumn {
-                get {
-                    return this.columnTwitter_TwitterId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Facebook_FacebookIdColumn {
-                get {
-                    return this.columnFacebook_FacebookId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn User_UserIdColumn {
-                get {
-                    return this.columnUser_UserId;
+                    return this.columnBanned;
                 }
             }
             
@@ -423,61 +383,57 @@ namespace SettlzAdmininstration {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PollsRow this[int index] {
+            public UsersRow this[int index] {
                 get {
-                    return ((PollsRow)(this.Rows[index]));
+                    return ((UsersRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event PollsRowChangeEventHandler PollsRowChanging;
+            public event UsersRowChangeEventHandler UsersRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event PollsRowChangeEventHandler PollsRowChanged;
+            public event UsersRowChangeEventHandler UsersRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event PollsRowChangeEventHandler PollsRowDeleting;
+            public event UsersRowChangeEventHandler UsersRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event PollsRowChangeEventHandler PollsRowDeleted;
+            public event UsersRowChangeEventHandler UsersRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddPollsRow(PollsRow row) {
+            public void AddUsersRow(UsersRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PollsRow AddPollsRow(string Argument, short ReportCount, bool PollStatus, System.DateTime ExpiryDate, short CategoryCategoryId, long Option_OptionsId, long Twitter_TwitterId, long Facebook_FacebookId, long User_UserId) {
-                PollsRow rowPollsRow = ((PollsRow)(this.NewRow()));
+            public UsersRow AddUsersRow(string Password, string Email, string FacebookAccount, string TwitterAccount, bool Banned) {
+                UsersRow rowUsersRow = ((UsersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Argument,
-                        ReportCount,
-                        PollStatus,
-                        ExpiryDate,
-                        CategoryCategoryId,
-                        Option_OptionsId,
-                        Twitter_TwitterId,
-                        Facebook_FacebookId,
-                        User_UserId};
-                rowPollsRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowPollsRow);
-                return rowPollsRow;
+                        Password,
+                        Email,
+                        FacebookAccount,
+                        TwitterAccount,
+                        Banned};
+                rowUsersRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowUsersRow);
+                return rowUsersRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PollsRow FindByPollId(long PollId) {
-                return ((PollsRow)(this.Rows.Find(new object[] {
-                            PollId})));
+            public UsersRow FindByUserId(long UserId) {
+                return ((UsersRow)(this.Rows.Find(new object[] {
+                            UserId})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                PollsDataTable cln = ((PollsDataTable)(base.Clone()));
+                UsersDataTable cln = ((UsersDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -485,90 +441,76 @@ namespace SettlzAdmininstration {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new PollsDataTable();
+                return new UsersDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnPollId = base.Columns["PollId"];
-                this.columnArgument = base.Columns["Argument"];
-                this.columnReportCount = base.Columns["ReportCount"];
-                this.columnPollStatus = base.Columns["PollStatus"];
-                this.columnExpiryDate = base.Columns["ExpiryDate"];
-                this.columnCategoryCategoryId = base.Columns["CategoryCategoryId"];
-                this.columnOption_OptionsId = base.Columns["Option_OptionsId"];
-                this.columnTwitter_TwitterId = base.Columns["Twitter_TwitterId"];
-                this.columnFacebook_FacebookId = base.Columns["Facebook_FacebookId"];
-                this.columnUser_UserId = base.Columns["User_UserId"];
+                this.columnUserId = base.Columns["UserId"];
+                this.columnPassword = base.Columns["Password"];
+                this.columnEmail = base.Columns["Email"];
+                this.columnFacebookAccount = base.Columns["FacebookAccount"];
+                this.columnTwitterAccount = base.Columns["TwitterAccount"];
+                this.columnBanned = base.Columns["Banned"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnPollId = new global::System.Data.DataColumn("PollId", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPollId);
-                this.columnArgument = new global::System.Data.DataColumn("Argument", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnArgument);
-                this.columnReportCount = new global::System.Data.DataColumn("ReportCount", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnReportCount);
-                this.columnPollStatus = new global::System.Data.DataColumn("PollStatus", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPollStatus);
-                this.columnExpiryDate = new global::System.Data.DataColumn("ExpiryDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpiryDate);
-                this.columnCategoryCategoryId = new global::System.Data.DataColumn("CategoryCategoryId", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCategoryCategoryId);
-                this.columnOption_OptionsId = new global::System.Data.DataColumn("Option_OptionsId", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOption_OptionsId);
-                this.columnTwitter_TwitterId = new global::System.Data.DataColumn("Twitter_TwitterId", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTwitter_TwitterId);
-                this.columnFacebook_FacebookId = new global::System.Data.DataColumn("Facebook_FacebookId", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFacebook_FacebookId);
-                this.columnUser_UserId = new global::System.Data.DataColumn("User_UserId", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnUser_UserId);
+                this.columnUserId = new global::System.Data.DataColumn("UserId", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUserId);
+                this.columnPassword = new global::System.Data.DataColumn("Password", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPassword);
+                this.columnEmail = new global::System.Data.DataColumn("Email", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEmail);
+                this.columnFacebookAccount = new global::System.Data.DataColumn("FacebookAccount", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFacebookAccount);
+                this.columnTwitterAccount = new global::System.Data.DataColumn("TwitterAccount", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTwitterAccount);
+                this.columnBanned = new global::System.Data.DataColumn("Banned", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBanned);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnPollId}, true));
-                this.columnPollId.AutoIncrement = true;
-                this.columnPollId.AutoIncrementSeed = -1;
-                this.columnPollId.AutoIncrementStep = -1;
-                this.columnPollId.AllowDBNull = false;
-                this.columnPollId.ReadOnly = true;
-                this.columnPollId.Unique = true;
-                this.columnArgument.AllowDBNull = false;
-                this.columnArgument.MaxLength = 2147483647;
-                this.columnReportCount.AllowDBNull = false;
-                this.columnPollStatus.AllowDBNull = false;
-                this.columnExpiryDate.AllowDBNull = false;
-                this.columnCategoryCategoryId.AllowDBNull = false;
-                this.columnOption_OptionsId.AllowDBNull = false;
-                this.columnTwitter_TwitterId.AllowDBNull = false;
-                this.columnFacebook_FacebookId.AllowDBNull = false;
+                                this.columnUserId}, true));
+                this.columnUserId.AutoIncrement = true;
+                this.columnUserId.AutoIncrementSeed = -1;
+                this.columnUserId.AutoIncrementStep = -1;
+                this.columnUserId.AllowDBNull = false;
+                this.columnUserId.ReadOnly = true;
+                this.columnUserId.Unique = true;
+                this.columnPassword.AllowDBNull = false;
+                this.columnPassword.MaxLength = 2147483647;
+                this.columnEmail.AllowDBNull = false;
+                this.columnEmail.MaxLength = 2147483647;
+                this.columnFacebookAccount.MaxLength = 2147483647;
+                this.columnTwitterAccount.MaxLength = 2147483647;
+                this.columnBanned.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PollsRow NewPollsRow() {
-                return ((PollsRow)(this.NewRow()));
+            public UsersRow NewUsersRow() {
+                return ((UsersRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new PollsRow(builder);
+                return new UsersRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(PollsRow);
+                return typeof(UsersRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.PollsRowChanged != null)) {
-                    this.PollsRowChanged(this, new PollsRowChangeEvent(((PollsRow)(e.Row)), e.Action));
+                if ((this.UsersRowChanged != null)) {
+                    this.UsersRowChanged(this, new UsersRowChangeEvent(((UsersRow)(e.Row)), e.Action));
                 }
             }
             
@@ -576,8 +518,8 @@ namespace SettlzAdmininstration {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.PollsRowChanging != null)) {
-                    this.PollsRowChanging(this, new PollsRowChangeEvent(((PollsRow)(e.Row)), e.Action));
+                if ((this.UsersRowChanging != null)) {
+                    this.UsersRowChanging(this, new UsersRowChangeEvent(((UsersRow)(e.Row)), e.Action));
                 }
             }
             
@@ -585,8 +527,8 @@ namespace SettlzAdmininstration {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.PollsRowDeleted != null)) {
-                    this.PollsRowDeleted(this, new PollsRowChangeEvent(((PollsRow)(e.Row)), e.Action));
+                if ((this.UsersRowDeleted != null)) {
+                    this.UsersRowDeleted(this, new UsersRowChangeEvent(((UsersRow)(e.Row)), e.Action));
                 }
             }
             
@@ -594,14 +536,14 @@ namespace SettlzAdmininstration {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.PollsRowDeleting != null)) {
-                    this.PollsRowDeleting(this, new PollsRowChangeEvent(((PollsRow)(e.Row)), e.Action));
+                if ((this.UsersRowDeleting != null)) {
+                    this.UsersRowDeleting(this, new UsersRowChangeEvent(((UsersRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemovePollsRow(PollsRow row) {
+            public void RemoveUsersRow(UsersRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -610,7 +552,7 @@ namespace SettlzAdmininstration {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                masterDataSet ds = new masterDataSet();
+                masterDataSet3 ds = new masterDataSet3();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -628,7 +570,7 @@ namespace SettlzAdmininstration {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "PollsDataTable";
+                attribute2.FixedValue = "UsersDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -672,142 +614,115 @@ namespace SettlzAdmininstration {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class PollsRow : global::System.Data.DataRow {
+        public partial class UsersRow : global::System.Data.DataRow {
             
-            private PollsDataTable tablePolls;
+            private UsersDataTable tableUsers;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal PollsRow(global::System.Data.DataRowBuilder rb) : 
+            internal UsersRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablePolls = ((PollsDataTable)(this.Table));
+                this.tableUsers = ((UsersDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public long PollId {
+            public long UserId {
                 get {
-                    return ((long)(this[this.tablePolls.PollIdColumn]));
+                    return ((long)(this[this.tableUsers.UserIdColumn]));
                 }
                 set {
-                    this[this.tablePolls.PollIdColumn] = value;
+                    this[this.tableUsers.UserIdColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Argument {
+            public string Password {
                 get {
-                    return ((string)(this[this.tablePolls.ArgumentColumn]));
+                    return ((string)(this[this.tableUsers.PasswordColumn]));
                 }
                 set {
-                    this[this.tablePolls.ArgumentColumn] = value;
+                    this[this.tableUsers.PasswordColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public short ReportCount {
+            public string Email {
                 get {
-                    return ((short)(this[this.tablePolls.ReportCountColumn]));
+                    return ((string)(this[this.tableUsers.EmailColumn]));
                 }
                 set {
-                    this[this.tablePolls.ReportCountColumn] = value;
+                    this[this.tableUsers.EmailColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool PollStatus {
-                get {
-                    return ((bool)(this[this.tablePolls.PollStatusColumn]));
-                }
-                set {
-                    this[this.tablePolls.PollStatusColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime ExpiryDate {
-                get {
-                    return ((global::System.DateTime)(this[this.tablePolls.ExpiryDateColumn]));
-                }
-                set {
-                    this[this.tablePolls.ExpiryDateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public short CategoryCategoryId {
-                get {
-                    return ((short)(this[this.tablePolls.CategoryCategoryIdColumn]));
-                }
-                set {
-                    this[this.tablePolls.CategoryCategoryIdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public long Option_OptionsId {
-                get {
-                    return ((long)(this[this.tablePolls.Option_OptionsIdColumn]));
-                }
-                set {
-                    this[this.tablePolls.Option_OptionsIdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public long Twitter_TwitterId {
-                get {
-                    return ((long)(this[this.tablePolls.Twitter_TwitterIdColumn]));
-                }
-                set {
-                    this[this.tablePolls.Twitter_TwitterIdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public long Facebook_FacebookId {
-                get {
-                    return ((long)(this[this.tablePolls.Facebook_FacebookIdColumn]));
-                }
-                set {
-                    this[this.tablePolls.Facebook_FacebookIdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public long User_UserId {
+            public string FacebookAccount {
                 get {
                     try {
-                        return ((long)(this[this.tablePolls.User_UserIdColumn]));
+                        return ((string)(this[this.tableUsers.FacebookAccountColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'User_UserId\' in table \'Polls\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'FacebookAccount\' in table \'Users\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePolls.User_UserIdColumn] = value;
+                    this[this.tableUsers.FacebookAccountColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsUser_UserIdNull() {
-                return this.IsNull(this.tablePolls.User_UserIdColumn);
+            public string TwitterAccount {
+                get {
+                    try {
+                        return ((string)(this[this.tableUsers.TwitterAccountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TwitterAccount\' in table \'Users\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUsers.TwitterAccountColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetUser_UserIdNull() {
-                this[this.tablePolls.User_UserIdColumn] = global::System.Convert.DBNull;
+            public bool Banned {
+                get {
+                    return ((bool)(this[this.tableUsers.BannedColumn]));
+                }
+                set {
+                    this[this.tableUsers.BannedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFacebookAccountNull() {
+                return this.IsNull(this.tableUsers.FacebookAccountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFacebookAccountNull() {
+                this[this.tableUsers.FacebookAccountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTwitterAccountNull() {
+                return this.IsNull(this.tableUsers.TwitterAccountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTwitterAccountNull() {
+                this[this.tableUsers.TwitterAccountColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -815,22 +730,22 @@ namespace SettlzAdmininstration {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class PollsRowChangeEvent : global::System.EventArgs {
+        public class UsersRowChangeEvent : global::System.EventArgs {
             
-            private PollsRow eventRow;
+            private UsersRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PollsRowChangeEvent(PollsRow row, global::System.Data.DataRowAction action) {
+            public UsersRowChangeEvent(UsersRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PollsRow Row {
+            public UsersRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -846,7 +761,7 @@ namespace SettlzAdmininstration {
         }
     }
 }
-namespace SettlzAdmininstration.masterDataSetTableAdapters {
+namespace SettlzAdmininstration.masterDataSet3TableAdapters {
     
     
     /// <summary>
@@ -858,7 +773,7 @@ namespace SettlzAdmininstration.masterDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class PollsTableAdapter : global::System.ComponentModel.Component {
+    public partial class UsersTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -872,7 +787,7 @@ namespace SettlzAdmininstration.masterDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public PollsTableAdapter() {
+        public UsersTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -969,71 +884,44 @@ namespace SettlzAdmininstration.masterDataSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Polls";
-            tableMapping.ColumnMappings.Add("PollId", "PollId");
-            tableMapping.ColumnMappings.Add("Argument", "Argument");
-            tableMapping.ColumnMappings.Add("ReportCount", "ReportCount");
-            tableMapping.ColumnMappings.Add("PollStatus", "PollStatus");
-            tableMapping.ColumnMappings.Add("ExpiryDate", "ExpiryDate");
-            tableMapping.ColumnMappings.Add("CategoryCategoryId", "CategoryCategoryId");
-            tableMapping.ColumnMappings.Add("Option_OptionsId", "Option_OptionsId");
-            tableMapping.ColumnMappings.Add("Twitter_TwitterId", "Twitter_TwitterId");
-            tableMapping.ColumnMappings.Add("Facebook_FacebookId", "Facebook_FacebookId");
-            tableMapping.ColumnMappings.Add("User_UserId", "User_UserId");
+            tableMapping.DataSetTable = "Users";
+            tableMapping.ColumnMappings.Add("UserId", "UserId");
+            tableMapping.ColumnMappings.Add("Password", "Password");
+            tableMapping.ColumnMappings.Add("Email", "Email");
+            tableMapping.ColumnMappings.Add("FacebookAccount", "FacebookAccount");
+            tableMapping.ColumnMappings.Add("TwitterAccount", "TwitterAccount");
+            tableMapping.ColumnMappings.Add("Banned", "Banned");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Polls] WHERE (([PollId] = @Original_PollId) AND ([ReportCount] = @Original_ReportCount) AND ([PollStatus] = @Original_PollStatus) AND ([ExpiryDate] = @Original_ExpiryDate) AND ([CategoryCategoryId] = @Original_CategoryCategoryId) AND ([Option_OptionsId] = @Original_Option_OptionsId) AND ([Twitter_TwitterId] = @Original_Twitter_TwitterId) AND ([Facebook_FacebookId] = @Original_Facebook_FacebookId) AND ((@IsNull_User_UserId = 1 AND [User_UserId] IS NULL) OR ([User_UserId] = @Original_User_UserId)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Users] WHERE (([UserId] = @Original_UserId) AND ([Banned] = @O" +
+                "riginal_Banned))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PollId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PollId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ReportCount", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReportCount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PollStatus", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PollStatus", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ExpiryDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ExpiryDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CategoryCategoryId", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CategoryCategoryId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Option_OptionsId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Option_OptionsId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Twitter_TwitterId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Twitter_TwitterId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Facebook_FacebookId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Facebook_FacebookId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_User_UserId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "User_UserId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_User_UserId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "User_UserId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Banned", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Banned", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Polls] ([Argument], [ReportCount], [PollStatus], [ExpiryDate], [CategoryCategoryId], [Option_OptionsId], [Twitter_TwitterId], [Facebook_FacebookId], [User_UserId]) VALUES (@Argument, @ReportCount, @PollStatus, @ExpiryDate, @CategoryCategoryId, @Option_OptionsId, @Twitter_TwitterId, @Facebook_FacebookId, @User_UserId);
-SELECT PollId, Argument, ReportCount, PollStatus, ExpiryDate, CategoryCategoryId, Option_OptionsId, Twitter_TwitterId, Facebook_FacebookId, User_UserId FROM Polls WHERE (PollId = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Users] ([Password], [Email], [FacebookAccount], [TwitterAccount], [Banned]) VALUES (@Password, @Email, @FacebookAccount, @TwitterAccount, @Banned);
+SELECT UserId, Password, Email, FacebookAccount, TwitterAccount, Banned FROM Users WHERE (UserId = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Argument", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Argument", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ReportCount", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReportCount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PollStatus", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PollStatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ExpiryDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ExpiryDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CategoryCategoryId", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CategoryCategoryId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Option_OptionsId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Option_OptionsId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Twitter_TwitterId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Twitter_TwitterId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Facebook_FacebookId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Facebook_FacebookId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@User_UserId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "User_UserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Password", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FacebookAccount", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FacebookAccount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TwitterAccount", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TwitterAccount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Banned", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Banned", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Polls] SET [Argument] = @Argument, [ReportCount] = @ReportCount, [PollStatus] = @PollStatus, [ExpiryDate] = @ExpiryDate, [CategoryCategoryId] = @CategoryCategoryId, [Option_OptionsId] = @Option_OptionsId, [Twitter_TwitterId] = @Twitter_TwitterId, [Facebook_FacebookId] = @Facebook_FacebookId, [User_UserId] = @User_UserId WHERE (([PollId] = @Original_PollId) AND ([ReportCount] = @Original_ReportCount) AND ([PollStatus] = @Original_PollStatus) AND ([ExpiryDate] = @Original_ExpiryDate) AND ([CategoryCategoryId] = @Original_CategoryCategoryId) AND ([Option_OptionsId] = @Original_Option_OptionsId) AND ([Twitter_TwitterId] = @Original_Twitter_TwitterId) AND ([Facebook_FacebookId] = @Original_Facebook_FacebookId) AND ((@IsNull_User_UserId = 1 AND [User_UserId] IS NULL) OR ([User_UserId] = @Original_User_UserId)));
-SELECT PollId, Argument, ReportCount, PollStatus, ExpiryDate, CategoryCategoryId, Option_OptionsId, Twitter_TwitterId, Facebook_FacebookId, User_UserId FROM Polls WHERE (PollId = @PollId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Users] SET [Password] = @Password, [Email] = @Email, [FacebookAccount] = @FacebookAccount, [TwitterAccount] = @TwitterAccount, [Banned] = @Banned WHERE (([UserId] = @Original_UserId) AND ([Banned] = @Original_Banned));
+SELECT UserId, Password, Email, FacebookAccount, TwitterAccount, Banned FROM Users WHERE (UserId = @UserId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Argument", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Argument", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ReportCount", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReportCount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PollStatus", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PollStatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ExpiryDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ExpiryDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CategoryCategoryId", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CategoryCategoryId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Option_OptionsId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Option_OptionsId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Twitter_TwitterId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Twitter_TwitterId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Facebook_FacebookId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Facebook_FacebookId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@User_UserId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "User_UserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PollId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PollId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ReportCount", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReportCount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PollStatus", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PollStatus", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ExpiryDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ExpiryDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CategoryCategoryId", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CategoryCategoryId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Option_OptionsId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Option_OptionsId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Twitter_TwitterId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Twitter_TwitterId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Facebook_FacebookId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Facebook_FacebookId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_User_UserId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "User_UserId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_User_UserId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "User_UserId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PollId", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "PollId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Password", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FacebookAccount", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FacebookAccount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TwitterAccount", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TwitterAccount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Banned", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Banned", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Banned", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Banned", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserId", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1049,9 +937,8 @@ SELECT PollId, Argument, ReportCount, PollStatus, ExpiryDate, CategoryCategoryId
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT PollId, Argument, ReportCount, PollStatus, ExpiryDate, CategoryCategoryId," +
-                " Option_OptionsId, Twitter_TwitterId, Facebook_FacebookId, User_UserId FROM Poll" +
-                "s";
+            this._commandCollection[0].CommandText = "SELECT UserId, Password, Email, FacebookAccount, TwitterAccount, Banned FROM dbo." +
+                "Users";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1059,7 +946,7 @@ SELECT PollId, Argument, ReportCount, PollStatus, ExpiryDate, CategoryCategoryId
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(masterDataSet.PollsDataTable dataTable) {
+        public virtual int Fill(masterDataSet3.UsersDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1072,9 +959,9 @@ SELECT PollId, Argument, ReportCount, PollStatus, ExpiryDate, CategoryCategoryId
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual masterDataSet.PollsDataTable GetData() {
+        public virtual masterDataSet3.UsersDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            masterDataSet.PollsDataTable dataTable = new masterDataSet.PollsDataTable();
+            masterDataSet3.UsersDataTable dataTable = new masterDataSet3.UsersDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1082,15 +969,15 @@ SELECT PollId, Argument, ReportCount, PollStatus, ExpiryDate, CategoryCategoryId
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(masterDataSet.PollsDataTable dataTable) {
+        public virtual int Update(masterDataSet3.UsersDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(masterDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "Polls");
+        public virtual int Update(masterDataSet3 dataSet) {
+            return this.Adapter.Update(dataSet, "Users");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1112,23 +999,9 @@ SELECT PollId, Argument, ReportCount, PollStatus, ExpiryDate, CategoryCategoryId
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_PollId, short Original_ReportCount, bool Original_PollStatus, System.DateTime Original_ExpiryDate, short Original_CategoryCategoryId, long Original_Option_OptionsId, long Original_Twitter_TwitterId, long Original_Facebook_FacebookId, global::System.Nullable<long> Original_User_UserId) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_PollId));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((short)(Original_ReportCount));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((bool)(Original_PollStatus));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_ExpiryDate));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((short)(Original_CategoryCategoryId));
-            this.Adapter.DeleteCommand.Parameters[5].Value = ((long)(Original_Option_OptionsId));
-            this.Adapter.DeleteCommand.Parameters[6].Value = ((long)(Original_Twitter_TwitterId));
-            this.Adapter.DeleteCommand.Parameters[7].Value = ((long)(Original_Facebook_FacebookId));
-            if ((Original_User_UserId.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((long)(Original_User_UserId.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
+        public virtual int Delete(long Original_UserId, bool Original_Banned) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_UserId));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((bool)(Original_Banned));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1149,26 +1022,32 @@ SELECT PollId, Argument, ReportCount, PollStatus, ExpiryDate, CategoryCategoryId
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Argument, short ReportCount, bool PollStatus, System.DateTime ExpiryDate, short CategoryCategoryId, long Option_OptionsId, long Twitter_TwitterId, long Facebook_FacebookId, global::System.Nullable<long> User_UserId) {
-            if ((Argument == null)) {
-                throw new global::System.ArgumentNullException("Argument");
+        public virtual int Insert(string Password, string Email, string FacebookAccount, string TwitterAccount, bool Banned) {
+            if ((Password == null)) {
+                throw new global::System.ArgumentNullException("Password");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Argument));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Password));
             }
-            this.Adapter.InsertCommand.Parameters[1].Value = ((short)(ReportCount));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((bool)(PollStatus));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(ExpiryDate));
-            this.Adapter.InsertCommand.Parameters[4].Value = ((short)(CategoryCategoryId));
-            this.Adapter.InsertCommand.Parameters[5].Value = ((long)(Option_OptionsId));
-            this.Adapter.InsertCommand.Parameters[6].Value = ((long)(Twitter_TwitterId));
-            this.Adapter.InsertCommand.Parameters[7].Value = ((long)(Facebook_FacebookId));
-            if ((User_UserId.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((long)(User_UserId.Value));
+            if ((Email == null)) {
+                throw new global::System.ArgumentNullException("Email");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Email));
             }
+            if ((FacebookAccount == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(FacebookAccount));
+            }
+            if ((TwitterAccount == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(TwitterAccount));
+            }
+            this.Adapter.InsertCommand.Parameters[4].Value = ((bool)(Banned));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1189,62 +1068,35 @@ SELECT PollId, Argument, ReportCount, PollStatus, ExpiryDate, CategoryCategoryId
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string Argument, 
-                    short ReportCount, 
-                    bool PollStatus, 
-                    System.DateTime ExpiryDate, 
-                    short CategoryCategoryId, 
-                    long Option_OptionsId, 
-                    long Twitter_TwitterId, 
-                    long Facebook_FacebookId, 
-                    global::System.Nullable<long> User_UserId, 
-                    long Original_PollId, 
-                    short Original_ReportCount, 
-                    bool Original_PollStatus, 
-                    System.DateTime Original_ExpiryDate, 
-                    short Original_CategoryCategoryId, 
-                    long Original_Option_OptionsId, 
-                    long Original_Twitter_TwitterId, 
-                    long Original_Facebook_FacebookId, 
-                    global::System.Nullable<long> Original_User_UserId, 
-                    long PollId) {
-            if ((Argument == null)) {
-                throw new global::System.ArgumentNullException("Argument");
+        public virtual int Update(string Password, string Email, string FacebookAccount, string TwitterAccount, bool Banned, long Original_UserId, bool Original_Banned, long UserId) {
+            if ((Password == null)) {
+                throw new global::System.ArgumentNullException("Password");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Argument));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Password));
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((short)(ReportCount));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((bool)(PollStatus));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(ExpiryDate));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((short)(CategoryCategoryId));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((long)(Option_OptionsId));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((long)(Twitter_TwitterId));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((long)(Facebook_FacebookId));
-            if ((User_UserId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((long)(User_UserId.Value));
+            if ((Email == null)) {
+                throw new global::System.ArgumentNullException("Email");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Email));
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((long)(Original_PollId));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((short)(Original_ReportCount));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((bool)(Original_PollStatus));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_ExpiryDate));
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((short)(Original_CategoryCategoryId));
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((long)(Original_Option_OptionsId));
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((long)(Original_Twitter_TwitterId));
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((long)(Original_Facebook_FacebookId));
-            if ((Original_User_UserId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((long)(Original_User_UserId.Value));
+            if ((FacebookAccount == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(FacebookAccount));
             }
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((long)(PollId));
+            if ((TwitterAccount == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(TwitterAccount));
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((bool)(Banned));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((long)(Original_UserId));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((bool)(Original_Banned));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((long)(UserId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1265,26 +1117,8 @@ SELECT PollId, Argument, ReportCount, PollStatus, ExpiryDate, CategoryCategoryId
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string Argument, 
-                    short ReportCount, 
-                    bool PollStatus, 
-                    System.DateTime ExpiryDate, 
-                    short CategoryCategoryId, 
-                    long Option_OptionsId, 
-                    long Twitter_TwitterId, 
-                    long Facebook_FacebookId, 
-                    global::System.Nullable<long> User_UserId, 
-                    long Original_PollId, 
-                    short Original_ReportCount, 
-                    bool Original_PollStatus, 
-                    System.DateTime Original_ExpiryDate, 
-                    short Original_CategoryCategoryId, 
-                    long Original_Option_OptionsId, 
-                    long Original_Twitter_TwitterId, 
-                    long Original_Facebook_FacebookId, 
-                    global::System.Nullable<long> Original_User_UserId) {
-            return this.Update(Argument, ReportCount, PollStatus, ExpiryDate, CategoryCategoryId, Option_OptionsId, Twitter_TwitterId, Facebook_FacebookId, User_UserId, Original_PollId, Original_ReportCount, Original_PollStatus, Original_ExpiryDate, Original_CategoryCategoryId, Original_Option_OptionsId, Original_Twitter_TwitterId, Original_Facebook_FacebookId, Original_User_UserId, Original_PollId);
+        public virtual int Update(string Password, string Email, string FacebookAccount, string TwitterAccount, bool Banned, long Original_UserId, bool Original_Banned) {
+            return this.Update(Password, Email, FacebookAccount, TwitterAccount, Banned, Original_UserId, Original_Banned, Original_UserId);
         }
     }
     
@@ -1300,7 +1134,7 @@ SELECT PollId, Argument, ReportCount, PollStatus, ExpiryDate, CategoryCategoryId
         
         private UpdateOrderOption _updateOrder;
         
-        private PollsTableAdapter _pollsTableAdapter;
+        private UsersTableAdapter _usersTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1322,12 +1156,12 @@ SELECT PollId, Argument, ReportCount, PollStatus, ExpiryDate, CategoryCategoryId
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public PollsTableAdapter PollsTableAdapter {
+        public UsersTableAdapter UsersTableAdapter {
             get {
-                return this._pollsTableAdapter;
+                return this._usersTableAdapter;
             }
             set {
-                this._pollsTableAdapter = value;
+                this._usersTableAdapter = value;
             }
         }
         
@@ -1350,9 +1184,9 @@ SELECT PollId, Argument, ReportCount, PollStatus, ExpiryDate, CategoryCategoryId
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._pollsTableAdapter != null) 
-                            && (this._pollsTableAdapter.Connection != null))) {
-                    return this._pollsTableAdapter.Connection;
+                if (((this._usersTableAdapter != null) 
+                            && (this._usersTableAdapter.Connection != null))) {
+                    return this._usersTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1367,7 +1201,7 @@ SELECT PollId, Argument, ReportCount, PollStatus, ExpiryDate, CategoryCategoryId
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._pollsTableAdapter != null)) {
+                if ((this._usersTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1379,14 +1213,14 @@ SELECT PollId, Argument, ReportCount, PollStatus, ExpiryDate, CategoryCategoryId
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(masterDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(masterDataSet3 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._pollsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Polls.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._usersTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Users.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._pollsTableAdapter.Update(updatedRows));
+                    result = (result + this._usersTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1398,13 +1232,13 @@ SELECT PollId, Argument, ReportCount, PollStatus, ExpiryDate, CategoryCategoryId
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(masterDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(masterDataSet3 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._pollsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Polls.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._usersTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Users.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._pollsTableAdapter.Update(addedRows));
+                    result = (result + this._usersTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1416,13 +1250,13 @@ SELECT PollId, Argument, ReportCount, PollStatus, ExpiryDate, CategoryCategoryId
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(masterDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(masterDataSet3 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._pollsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Polls.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._usersTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Users.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._pollsTableAdapter.Update(deletedRows));
+                    result = (result + this._usersTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1458,15 +1292,15 @@ SELECT PollId, Argument, ReportCount, PollStatus, ExpiryDate, CategoryCategoryId
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(masterDataSet dataSet) {
+        public virtual int UpdateAll(masterDataSet3 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._pollsTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._pollsTableAdapter.Connection) == false))) {
+            if (((this._usersTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._usersTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1502,13 +1336,13 @@ SELECT PollId, Argument, ReportCount, PollStatus, ExpiryDate, CategoryCategoryId
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._pollsTableAdapter != null)) {
-                    revertConnections.Add(this._pollsTableAdapter, this._pollsTableAdapter.Connection);
-                    this._pollsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._pollsTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._pollsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._pollsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._pollsTableAdapter.Adapter);
+                if ((this._usersTableAdapter != null)) {
+                    revertConnections.Add(this._usersTableAdapter, this._usersTableAdapter.Connection);
+                    this._usersTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._usersTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._usersTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._usersTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._usersTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1569,9 +1403,9 @@ SELECT PollId, Argument, ReportCount, PollStatus, ExpiryDate, CategoryCategoryId
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._pollsTableAdapter != null)) {
-                    this._pollsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._pollsTableAdapter]));
-                    this._pollsTableAdapter.Transaction = null;
+                if ((this._usersTableAdapter != null)) {
+                    this._usersTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._usersTableAdapter]));
+                    this._usersTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

@@ -25,11 +25,11 @@ namespace SettlzAdmininstration
 
         private void AdminForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'masterDataSet1.Users' table. You can move, or remove it, as needed.
-            this.usersTableAdapter.Fill(this.masterDataSet1.Users);
+            // TODO: This line of code loads data into the 'masterDataSet3.Users' table. You can move, or remove it, as needed.
+            this.usersTableAdapter1.Fill(this.masterDataSet3.Users);
             // TODO: This line of code loads data into the 'masterDataSet.Polls' table. You can move, or remove it, as needed.
             this.pollsTableAdapter.Fill(this.masterDataSet.Polls);
-
+            this.reportViewer1.RefreshReport();
         }
 
         private void updatebtn_Click(object sender, EventArgs e)
@@ -39,7 +39,7 @@ namespace SettlzAdmininstration
 
         private void updatebtn2_Click(object sender, EventArgs e)
         {
-            this.usersTableAdapter.Update(this.masterDataSet1.Users);
+            this.usersTableAdapter1.Update(this.masterDataSet3.Users);
         }
 
         private void deletebtn1_Click(object sender, EventArgs e)
@@ -75,7 +75,7 @@ namespace SettlzAdmininstration
                     dataGridView2.Rows.Remove(rowToRemove);
                 }
             }
-            this.usersTableAdapter.Update(this.masterDataSet1.Users);
+            this.usersTableAdapter1.Update(this.masterDataSet3.Users);
         }
     }
 }
