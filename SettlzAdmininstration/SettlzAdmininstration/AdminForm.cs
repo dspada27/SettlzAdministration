@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace SettlzAdmininstration
 {
+    //this is a comment
     public partial class AdminForm : Form
     {
         public AdminForm()
