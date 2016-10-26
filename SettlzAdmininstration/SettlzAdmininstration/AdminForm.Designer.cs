@@ -37,31 +37,6 @@
             this.deletebtn1 = new System.Windows.Forms.Button();
             this.updatebtn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.combolbl = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.deletebtn = new System.Windows.Forms.Button();
-            this.updatebtn2 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.Selected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.userIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.facebookAccountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.twitterAccountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Banned = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.usersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.masterDataSet3 = new SettlzAdmininstration.masterDataSet3();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.masterDataSet1 = new SettlzAdmininstration.masterDataSet1();
-            this.usersTableAdapter = new SettlzAdmininstration.masterDataSet1TableAdapters.UsersTableAdapter();
-            this.usersTableAdapter1 = new SettlzAdmininstration.masterDataSet3TableAdapters.UsersTableAdapter();
-            this.pollsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.masterDataSet = new SettlzAdmininstration.masterDataSet();
-            this.pollsTableAdapter = new SettlzAdmininstration.masterDataSetTableAdapters.PollsTableAdapter();
-            this.masterDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.pollIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.argumentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,18 +45,37 @@
             this.expiryDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryCategoryIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.User_UserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pollsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.masterDataSet = new SettlzAdmininstration.masterDataSet();
+            this.combolbl = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.deletebtn = new System.Windows.Forms.Button();
+            this.updatebtn2 = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.usersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.masterDataSet3 = new SettlzAdmininstration.masterDataSet3();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usersTableAdapter1 = new SettlzAdmininstration.masterDataSet3TableAdapters.UsersTableAdapter();
+            this.pollsTableAdapter = new SettlzAdmininstration.masterDataSetTableAdapters.PollsTableAdapter();
+            this.masterDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Selected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.userIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Banned = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TabControl.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pollsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.masterDataSet)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.masterDataSet3)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.masterDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pollsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.masterDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.masterDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -171,187 +165,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1033, 285);
             this.dataGridView1.TabIndex = 3;
             // 
-            // combolbl
-            // 
-            this.combolbl.AutoSize = true;
-            this.combolbl.Location = new System.Drawing.Point(18, 18);
-            this.combolbl.Name = "combolbl";
-            this.combolbl.Size = new System.Drawing.Size(204, 13);
-            this.combolbl.TabIndex = 2;
-            this.combolbl.Text = "Please select an option from the list below";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Expired Polls",
-            "Reported Polls",
-            "All Polls"});
-            this.comboBox1.Location = new System.Drawing.Point(21, 56);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 1;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.deletebtn);
-            this.tabPage3.Controls.Add(this.updatebtn2);
-            this.tabPage3.Controls.Add(this.dataGridView2);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1054, 432);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Users";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // deletebtn
-            // 
-            this.deletebtn.Location = new System.Drawing.Point(269, 89);
-            this.deletebtn.Name = "deletebtn";
-            this.deletebtn.Size = new System.Drawing.Size(75, 23);
-            this.deletebtn.TabIndex = 2;
-            this.deletebtn.Text = "Delete";
-            this.deletebtn.UseVisualStyleBackColor = true;
-            this.deletebtn.Click += new System.EventHandler(this.deletebtn_Click);
-            // 
-            // updatebtn2
-            // 
-            this.updatebtn2.Location = new System.Drawing.Point(169, 89);
-            this.updatebtn2.Name = "updatebtn2";
-            this.updatebtn2.Size = new System.Drawing.Size(75, 23);
-            this.updatebtn2.TabIndex = 1;
-            this.updatebtn2.Text = "Update";
-            this.updatebtn2.UseVisualStyleBackColor = true;
-            this.updatebtn2.Click += new System.EventHandler(this.updatebtn2_Click);
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.userIdDataGridViewTextBoxColumn,
-            this.passwordDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
-            this.facebookAccountDataGridViewTextBoxColumn,
-            this.twitterAccountDataGridViewTextBoxColumn,
-            this.Banned,
-            this.Selected});
-            this.dataGridView2.DataSource = this.usersBindingSource1;
-            this.dataGridView2.Location = new System.Drawing.Point(113, 118);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(744, 304);
-            this.dataGridView2.TabIndex = 0;
-            // 
-            // Selected
-            // 
-            this.Selected.FalseValue = "false";
-            this.Selected.HeaderText = "Select";
-            this.Selected.IndeterminateValue = "";
-            this.Selected.Name = "Selected";
-            this.Selected.TrueValue = "true";
-            // 
-            // userIdDataGridViewTextBoxColumn
-            // 
-            this.userIdDataGridViewTextBoxColumn.DataPropertyName = "UserId";
-            this.userIdDataGridViewTextBoxColumn.HeaderText = "UserId";
-            this.userIdDataGridViewTextBoxColumn.Name = "userIdDataGridViewTextBoxColumn";
-            this.userIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // passwordDataGridViewTextBoxColumn
-            // 
-            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
-            this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
-            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            // 
-            // facebookAccountDataGridViewTextBoxColumn
-            // 
-            this.facebookAccountDataGridViewTextBoxColumn.DataPropertyName = "FacebookAccount";
-            this.facebookAccountDataGridViewTextBoxColumn.HeaderText = "FacebookAccount";
-            this.facebookAccountDataGridViewTextBoxColumn.Name = "facebookAccountDataGridViewTextBoxColumn";
-            // 
-            // twitterAccountDataGridViewTextBoxColumn
-            // 
-            this.twitterAccountDataGridViewTextBoxColumn.DataPropertyName = "TwitterAccount";
-            this.twitterAccountDataGridViewTextBoxColumn.HeaderText = "TwitterAccount";
-            this.twitterAccountDataGridViewTextBoxColumn.Name = "twitterAccountDataGridViewTextBoxColumn";
-            // 
-            // Banned
-            // 
-            this.Banned.DataPropertyName = "Banned";
-            this.Banned.HeaderText = "Banned";
-            this.Banned.Name = "Banned";
-            // 
-            // usersBindingSource1
-            // 
-            this.usersBindingSource1.DataMember = "Users";
-            this.usersBindingSource1.DataSource = this.masterDataSet3;
-            // 
-            // masterDataSet3
-            // 
-            this.masterDataSet3.DataSetName = "masterDataSet3";
-            this.masterDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.reportViewer1);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1054, 432);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Reports";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // reportViewer1
-            // 
-            this.reportViewer1.Location = new System.Drawing.Point(123, 125);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(685, 304);
-            this.reportViewer1.TabIndex = 0;
-            // 
-            // usersBindingSource
-            // 
-            this.usersBindingSource.DataMember = "Users";
-            this.usersBindingSource.DataSource = this.masterDataSet1;
-            // 
-            // masterDataSet1
-            // 
-            this.masterDataSet1.DataSetName = "masterDataSet1";
-            this.masterDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // usersTableAdapter
-            // 
-            this.usersTableAdapter.ClearBeforeFill = true;
-            // 
-            // usersTableAdapter1
-            // 
-            this.usersTableAdapter1.ClearBeforeFill = true;
-            // 
-            // pollsBindingSource
-            // 
-            this.pollsBindingSource.DataMember = "Polls";
-            this.pollsBindingSource.DataSource = this.masterDataSet;
-            // 
-            // masterDataSet
-            // 
-            this.masterDataSet.DataSetName = "masterDataSet";
-            this.masterDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // pollsTableAdapter
-            // 
-            this.pollsTableAdapter.ClearBeforeFill = true;
-            // 
-            // masterDataSetBindingSource
-            // 
-            this.masterDataSetBindingSource.DataSource = this.masterDataSet;
-            this.masterDataSetBindingSource.Position = 0;
-            // 
             // Select
             // 
             this.Select.FalseValue = "false";
@@ -402,6 +215,152 @@
             this.User_UserId.HeaderText = "User_UserId";
             this.User_UserId.Name = "User_UserId";
             // 
+            // pollsBindingSource
+            // 
+            this.pollsBindingSource.DataMember = "Polls";
+            this.pollsBindingSource.DataSource = this.masterDataSet;
+            // 
+            // masterDataSet
+            // 
+            this.masterDataSet.DataSetName = "masterDataSet";
+            this.masterDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // combolbl
+            // 
+            this.combolbl.AutoSize = true;
+            this.combolbl.Location = new System.Drawing.Point(18, 18);
+            this.combolbl.Name = "combolbl";
+            this.combolbl.Size = new System.Drawing.Size(204, 13);
+            this.combolbl.TabIndex = 2;
+            this.combolbl.Text = "Please select an option from the list below";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Expired Polls",
+            "Reported Polls",
+            "All Polls"});
+            this.comboBox1.Location = new System.Drawing.Point(21, 56);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 1;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.deletebtn);
+            this.tabPage3.Controls.Add(this.updatebtn2);
+            this.tabPage3.Controls.Add(this.dataGridView2);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(1054, 432);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Users";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // deletebtn
+            // 
+            this.deletebtn.Location = new System.Drawing.Point(606, 89);
+            this.deletebtn.Name = "deletebtn";
+            this.deletebtn.Size = new System.Drawing.Size(75, 23);
+            this.deletebtn.TabIndex = 2;
+            this.deletebtn.Text = "Delete";
+            this.deletebtn.UseVisualStyleBackColor = true;
+            this.deletebtn.Click += new System.EventHandler(this.deletebtn_Click);
+            // 
+            // updatebtn2
+            // 
+            this.updatebtn2.Location = new System.Drawing.Point(237, 89);
+            this.updatebtn2.Name = "updatebtn2";
+            this.updatebtn2.Size = new System.Drawing.Size(75, 23);
+            this.updatebtn2.TabIndex = 1;
+            this.updatebtn2.Text = "Update";
+            this.updatebtn2.UseVisualStyleBackColor = true;
+            this.updatebtn2.Click += new System.EventHandler(this.updatebtn2_Click);
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Selected,
+            this.userIdDataGridViewTextBoxColumn,
+            this.Banned,
+            this.emailDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.usersBindingSource1;
+            this.dataGridView2.Location = new System.Drawing.Point(237, 125);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(444, 304);
+            this.dataGridView2.TabIndex = 0;
+            // 
+            // usersBindingSource1
+            // 
+            this.usersBindingSource1.DataMember = "Users";
+            this.usersBindingSource1.DataSource = this.masterDataSet3;
+            // 
+            // masterDataSet3
+            // 
+            this.masterDataSet3.DataSetName = "masterDataSet3";
+            this.masterDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.reportViewer1);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(1054, 432);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Reports";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Location = new System.Drawing.Point(123, 125);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(685, 304);
+            this.reportViewer1.TabIndex = 0;
+            // 
+            // usersTableAdapter1
+            // 
+            this.usersTableAdapter1.ClearBeforeFill = true;
+            // 
+            // pollsTableAdapter
+            // 
+            this.pollsTableAdapter.ClearBeforeFill = true;
+            // 
+            // masterDataSetBindingSource
+            // 
+            this.masterDataSetBindingSource.DataSource = this.masterDataSet;
+            this.masterDataSetBindingSource.Position = 0;
+            // 
+            // Selected
+            // 
+            this.Selected.FalseValue = "false";
+            this.Selected.HeaderText = "Select";
+            this.Selected.IndeterminateValue = "";
+            this.Selected.Name = "Selected";
+            this.Selected.TrueValue = "true";
+            // 
+            // userIdDataGridViewTextBoxColumn
+            // 
+            this.userIdDataGridViewTextBoxColumn.DataPropertyName = "UserId";
+            this.userIdDataGridViewTextBoxColumn.HeaderText = "UserId";
+            this.userIdDataGridViewTextBoxColumn.Name = "userIdDataGridViewTextBoxColumn";
+            this.userIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Banned
+            // 
+            this.Banned.DataPropertyName = "Banned";
+            this.Banned.HeaderText = "Banned";
+            this.Banned.Name = "Banned";
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -415,15 +374,14 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pollsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.masterDataSet)).EndInit();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.masterDataSet3)).EndInit();
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.masterDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pollsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.masterDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.masterDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -445,9 +403,7 @@
         private masterDataSetTableAdapters.PollsTableAdapter pollsTableAdapter;
         private System.Windows.Forms.Button updatebtn;
         private System.Windows.Forms.BindingSource masterDataSetBindingSource;
-        private masterDataSet1 masterDataSet1;
         private System.Windows.Forms.BindingSource usersBindingSource;
-        private masterDataSet1TableAdapters.UsersTableAdapter usersTableAdapter;
         private System.Windows.Forms.Button updatebtn2;
         private System.Windows.Forms.Button deletebtn;
         private System.Windows.Forms.Button deletebtn1;
@@ -456,13 +412,6 @@
         private System.Windows.Forms.BindingSource usersBindingSource1;
         private masterDataSet3TableAdapters.UsersTableAdapter usersTableAdapter1;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Selected;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn facebookAccountDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn twitterAccountDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Banned;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Select;
         private System.Windows.Forms.DataGridViewTextBoxColumn pollIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn argumentDataGridViewTextBoxColumn;
@@ -471,5 +420,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn expiryDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn categoryCategoryIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn User_UserId;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Selected;
+        private System.Windows.Forms.DataGridViewTextBoxColumn userIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Banned;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
     }
 }
