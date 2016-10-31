@@ -78,5 +78,10 @@ namespace SettlzAdmininstration
             }
             this.usersTableAdapter1.Update(this.masterDataSet3.Users);
         }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

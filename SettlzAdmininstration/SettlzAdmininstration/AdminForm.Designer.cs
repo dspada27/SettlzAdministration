@@ -53,6 +53,10 @@
             this.deletebtn = new System.Windows.Forms.Button();
             this.updatebtn2 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Selected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.userIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Banned = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.masterDataSet3 = new SettlzAdmininstration.masterDataSet3();
             this.tabPage4 = new System.Windows.Forms.TabPage();
@@ -61,10 +65,6 @@
             this.usersTableAdapter1 = new SettlzAdmininstration.masterDataSet3TableAdapters.UsersTableAdapter();
             this.pollsTableAdapter = new SettlzAdmininstration.masterDataSetTableAdapters.PollsTableAdapter();
             this.masterDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.Selected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.userIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Banned = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TabControl.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -258,6 +258,7 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Users";
             this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
             // deletebtn
             // 
@@ -294,46 +295,6 @@
             this.dataGridView2.Size = new System.Drawing.Size(444, 304);
             this.dataGridView2.TabIndex = 0;
             // 
-            // usersBindingSource1
-            // 
-            this.usersBindingSource1.DataMember = "Users";
-            this.usersBindingSource1.DataSource = this.masterDataSet3;
-            // 
-            // masterDataSet3
-            // 
-            this.masterDataSet3.DataSetName = "masterDataSet3";
-            this.masterDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.reportViewer1);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1054, 432);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Reports";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // reportViewer1
-            // 
-            this.reportViewer1.Location = new System.Drawing.Point(123, 125);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(685, 304);
-            this.reportViewer1.TabIndex = 0;
-            // 
-            // usersTableAdapter1
-            // 
-            this.usersTableAdapter1.ClearBeforeFill = true;
-            // 
-            // pollsTableAdapter
-            // 
-            this.pollsTableAdapter.ClearBeforeFill = true;
-            // 
-            // masterDataSetBindingSource
-            // 
-            this.masterDataSetBindingSource.DataSource = this.masterDataSet;
-            this.masterDataSetBindingSource.Position = 0;
-            // 
             // Selected
             // 
             this.Selected.FalseValue = "false";
@@ -360,6 +321,49 @@
             this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
             this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            // 
+            // usersBindingSource1
+            // 
+            this.usersBindingSource1.DataMember = "Users";
+            this.usersBindingSource1.DataSource = this.masterDataSet3;
+            // 
+            // masterDataSet3
+            // 
+            this.masterDataSet3.DataSetName = "masterDataSet3";
+            this.masterDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.reportViewer1);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(1054, 432);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Reports";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Location = new System.Drawing.Point(126, 127);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Remote;
+            this.reportViewer1.ServerReport.ReportPath = "/NewReports/test";
+            this.reportViewer1.ServerReport.ReportServerUrl = new System.Uri("http://142.55.49.224/ReportServer", System.UriKind.Absolute);
+            this.reportViewer1.Size = new System.Drawing.Size(685, 304);
+            this.reportViewer1.TabIndex = 0;
+            // 
+            // usersTableAdapter1
+            // 
+            this.usersTableAdapter1.ClearBeforeFill = true;
+            // 
+            // pollsTableAdapter
+            // 
+            this.pollsTableAdapter.ClearBeforeFill = true;
+            // 
+            // masterDataSetBindingSource
+            // 
+            this.masterDataSetBindingSource.DataSource = this.masterDataSet;
+            this.masterDataSetBindingSource.Position = 0;
             // 
             // AdminForm
             // 
