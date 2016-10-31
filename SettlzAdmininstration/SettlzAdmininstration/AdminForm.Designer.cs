@@ -38,12 +38,6 @@
             this.updatebtn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.pollIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.argumentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reportCountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pollStatusDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.expiryDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoryCategoryIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.User_UserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pollsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.masterDataSet = new SettlzAdmininstration.masterDataSet();
@@ -54,9 +48,7 @@
             this.updatebtn2 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Selected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.userIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Banned = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.masterDataSet3 = new SettlzAdmininstration.masterDataSet3();
             this.tabPage4 = new System.Windows.Forms.TabPage();
@@ -65,6 +57,7 @@
             this.usersTableAdapter1 = new SettlzAdmininstration.masterDataSet3TableAdapters.UsersTableAdapter();
             this.pollsTableAdapter = new SettlzAdmininstration.masterDataSetTableAdapters.PollsTableAdapter();
             this.masterDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.TabControl.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -148,18 +141,10 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Select,
-            this.pollIdDataGridViewTextBoxColumn,
-            this.argumentDataGridViewTextBoxColumn,
-            this.reportCountDataGridViewTextBoxColumn,
-            this.pollStatusDataGridViewCheckBoxColumn,
-            this.expiryDateDataGridViewTextBoxColumn,
-            this.categoryCategoryIdDataGridViewTextBoxColumn,
             this.User_UserId});
-            this.dataGridView1.DataSource = this.pollsBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(6, 141);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1033, 285);
@@ -171,43 +156,6 @@
             this.Select.HeaderText = "Select";
             this.Select.Name = "Select";
             this.Select.TrueValue = "true";
-            // 
-            // pollIdDataGridViewTextBoxColumn
-            // 
-            this.pollIdDataGridViewTextBoxColumn.DataPropertyName = "PollId";
-            this.pollIdDataGridViewTextBoxColumn.HeaderText = "PollId";
-            this.pollIdDataGridViewTextBoxColumn.Name = "pollIdDataGridViewTextBoxColumn";
-            this.pollIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // argumentDataGridViewTextBoxColumn
-            // 
-            this.argumentDataGridViewTextBoxColumn.DataPropertyName = "Argument";
-            this.argumentDataGridViewTextBoxColumn.HeaderText = "Argument";
-            this.argumentDataGridViewTextBoxColumn.Name = "argumentDataGridViewTextBoxColumn";
-            // 
-            // reportCountDataGridViewTextBoxColumn
-            // 
-            this.reportCountDataGridViewTextBoxColumn.DataPropertyName = "ReportCount";
-            this.reportCountDataGridViewTextBoxColumn.HeaderText = "ReportCount";
-            this.reportCountDataGridViewTextBoxColumn.Name = "reportCountDataGridViewTextBoxColumn";
-            // 
-            // pollStatusDataGridViewCheckBoxColumn
-            // 
-            this.pollStatusDataGridViewCheckBoxColumn.DataPropertyName = "PollStatus";
-            this.pollStatusDataGridViewCheckBoxColumn.HeaderText = "PollStatus";
-            this.pollStatusDataGridViewCheckBoxColumn.Name = "pollStatusDataGridViewCheckBoxColumn";
-            // 
-            // expiryDateDataGridViewTextBoxColumn
-            // 
-            this.expiryDateDataGridViewTextBoxColumn.DataPropertyName = "ExpiryDate";
-            this.expiryDateDataGridViewTextBoxColumn.HeaderText = "ExpiryDate";
-            this.expiryDateDataGridViewTextBoxColumn.Name = "expiryDateDataGridViewTextBoxColumn";
-            // 
-            // categoryCategoryIdDataGridViewTextBoxColumn
-            // 
-            this.categoryCategoryIdDataGridViewTextBoxColumn.DataPropertyName = "CategoryCategoryId";
-            this.categoryCategoryIdDataGridViewTextBoxColumn.HeaderText = "CategoryCategoryId";
-            this.categoryCategoryIdDataGridViewTextBoxColumn.Name = "categoryCategoryIdDataGridViewTextBoxColumn";
             // 
             // User_UserId
             // 
@@ -249,6 +197,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.comboBox2);
             this.tabPage3.Controls.Add(this.deletebtn);
             this.tabPage3.Controls.Add(this.updatebtn2);
             this.tabPage3.Controls.Add(this.dataGridView2);
@@ -282,14 +231,10 @@
             // 
             // dataGridView2
             // 
-            this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Selected,
-            this.userIdDataGridViewTextBoxColumn,
-            this.Banned,
-            this.emailDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.usersBindingSource1;
+            this.Banned});
             this.dataGridView2.Location = new System.Drawing.Point(237, 125);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(444, 304);
@@ -303,24 +248,11 @@
             this.Selected.Name = "Selected";
             this.Selected.TrueValue = "true";
             // 
-            // userIdDataGridViewTextBoxColumn
-            // 
-            this.userIdDataGridViewTextBoxColumn.DataPropertyName = "UserId";
-            this.userIdDataGridViewTextBoxColumn.HeaderText = "UserId";
-            this.userIdDataGridViewTextBoxColumn.Name = "userIdDataGridViewTextBoxColumn";
-            this.userIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // Banned
             // 
             this.Banned.DataPropertyName = "Banned";
             this.Banned.HeaderText = "Banned";
             this.Banned.Name = "Banned";
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
             // 
             // usersBindingSource1
             // 
@@ -364,6 +296,19 @@
             // 
             this.masterDataSetBindingSource.DataSource = this.masterDataSet;
             this.masterDataSetBindingSource.Position = 0;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Banned Users",
+            "All Users",
+            "Active Users"});
+            this.comboBox2.Location = new System.Drawing.Point(237, 44);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.TabIndex = 3;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // AdminForm
             // 
@@ -417,16 +362,9 @@
         private masterDataSet3TableAdapters.UsersTableAdapter usersTableAdapter1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Select;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pollIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn argumentDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn reportCountDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn pollStatusDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn expiryDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoryCategoryIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn User_UserId;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Selected;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Banned;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }
