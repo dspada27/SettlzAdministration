@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using SettlzAdmininstration.masterDataSet3TableAdapters;
 
 namespace SettlzAdmininstration
 {
@@ -16,6 +17,10 @@ namespace SettlzAdmininstration
     //another
     public partial class AdminForm : Form
     {
+        PollsTableAdapter pollsTableAdapter1 = new PollsTableAdapter();
+        masterDataSet3.PollsDataTable dtRecord = new masterDataSet3.PollsDataTable();
+        String sqlconn = "data source=142.55.49.224;initial catalog=master;persist security info=True;user id=sa;Password=Devtech1$;MultipleActiveResultSets=True;App=EntityFramework&quot;";
+
         public AdminForm()
         {
             InitializeComponent();
@@ -25,36 +30,24 @@ namespace SettlzAdmininstration
         {
             try
             {
+                dtRecord.Clear();
                 dataGridView1.DataSource = null;
-
-                String query = null;
 
                 if (comboBox1.SelectedItem.ToString() == "All Polls")
                 {
-                    query = "SELECT PollId, Argument, ReportCount, PollStatus, ExpiryDate, CategoryCategoryId, User_UserId FROM Polls";
+                    pollsTableAdapter1.Fill(dtRecord);
                 }
                 else if (comboBox1.SelectedItem.ToString() == "Expired Polls")
                 {
-                    query = "SELECT PollId, Argument, ReportCount, PollStatus, ExpiryDate, CategoryCategoryId, User_UserId FROM Polls WHERE ExpiryDate <= getDate();";
+                    pollsTableAdapter1.FillByExpiry(dtRecord);
                 }
                 else if (comboBox1.SelectedItem.ToString() == "Reported Polls")
                 {
-                    query = "SELECT PollId, Argument, ReportCount, PollStatus, ExpiryDate, CategoryCategoryId, User_UserId FROM Polls WHERE ReportCount >= 1;";
+                    pollsTableAdapter1.FillBy(dtRecord);
                 }
-                String sqlconn = "data source=142.55.49.224;initial catalog=master;persist security info=True;user id=sa;Password=Devtech1$;MultipleActiveResultSets=True;App=EntityFramework&quot;";
                 SqlConnection con = new SqlConnection(sqlconn);
                 con.Open();
 
-                SqlCommand sqlCmd = new SqlCommand();
-                sqlCmd.Connection = con;
-                sqlCmd.CommandType = CommandType.Text;
-                sqlCmd.CommandText = query;
-                Console.WriteLine(query);
-
-                SqlDataAdapter pollsTableAdapter = new SqlDataAdapter(sqlCmd);
-
-                DataTable dtRecord = new DataTable();
-                pollsTableAdapter.Fill(dtRecord);
                 dataGridView1.DataSource = dtRecord;
                 con.Close();
             }
@@ -66,21 +59,23 @@ namespace SettlzAdmininstration
 
         private void AdminForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'masterDataSet.Polls' table. You can move, or remove it, as needed.
-            this.pollsTableAdapter.Fill(this.masterDataSet.Polls);
-            // TODO: This line of code loads data into the 'masterDataSet3.Users' table. You can move, or remove it, as needed.
-            this.usersTableAdapter1.Fill(this.masterDataSet3.Users);
             this.reportViewer1.RefreshReport();
         }
 
         private void updatebtn_Click(object sender, EventArgs e)
         {
-            this.pollsTableAdapter.Update(this.masterDataSet.Polls);
+            try
+            {
+                pollsTableAdapter1.Update(dtRecord);
+                String msg = "Row(s) Updated";
+                System.Windows.Forms.MessageBox.Show(msg);
+            }
+            catch (Exception ex) { }
         }
 
         private void updatebtn2_Click(object sender, EventArgs e)
         {
-            this.usersTableAdapter1.Update(this.masterDataSet3.Users);
+       
         }
 
         private void deletebtn1_Click(object sender, EventArgs e)
@@ -166,5 +161,10 @@ namespace SettlzAdmininstration
 
                 }
             }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
+    }
 }

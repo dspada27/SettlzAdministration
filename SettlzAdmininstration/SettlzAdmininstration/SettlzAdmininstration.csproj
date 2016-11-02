@@ -99,6 +99,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>masterDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="masterDataSet3.cs">
+      <DependentUpon>masterDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="masterDataSet3.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
