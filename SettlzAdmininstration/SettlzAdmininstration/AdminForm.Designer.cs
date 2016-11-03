@@ -49,6 +49,7 @@
             this.Selected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Banned = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.pollsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.masterDataSet = new SettlzAdmininstration.masterDataSet();
@@ -260,6 +261,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.comboBox3);
             this.tabPage4.Controls.Add(this.reportViewer1);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
@@ -268,13 +270,25 @@
             this.tabPage4.Text = "Reports";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "test1",
+            "test2",
+            "test3"});
+            this.comboBox3.Location = new System.Drawing.Point(126, 66);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(121, 21);
+            this.comboBox3.TabIndex = 1;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged_1);
+            // 
             // reportViewer1
             // 
-            this.reportViewer1.Location = new System.Drawing.Point(126, 127);
+            this.reportViewer1.Location = new System.Drawing.Point(124, 127);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Remote;
-            this.reportViewer1.ServerReport.ReportPath = "/NewReports/test";
-            this.reportViewer1.ServerReport.ReportServerUrl = new System.Uri("http://142.55.49.224/ReportServer", System.UriKind.Absolute);
+            this.reportViewer1.ServerReport.ReportServerUrl = new System.Uri("", System.UriKind.Relative);
             this.reportViewer1.Size = new System.Drawing.Size(685, 304);
             this.reportViewer1.TabIndex = 0;
             // 
@@ -367,5 +381,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn Selected;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Banned;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox3;
     }
 }

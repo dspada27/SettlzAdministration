@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using SettlzAdmininstration.masterDataSet3TableAdapters;
+using Microsoft.Reporting.WinForms;
+using System.Net;
 
 namespace SettlzAdmininstration
 {
@@ -166,5 +168,34 @@ namespace SettlzAdmininstration
         {
 
         }
-    }
+   
+        private void comboBox3_SelectedIndexChanged_1(object sender, EventArgs e)
+        {         
+            ServerReport serverReport = reportViewer1.ServerReport;
+            serverReport.ReportServerUrl = new Uri("http://142.55.49.224/ReportServer");
+
+            //Passing credentials for the server to login to avoid 401 unathorized msg
+            System.Net.NetworkCredential myCred = new
+               NetworkCredential("csadmin", "$PleaseChangeMe2015$", "");
+            reportViewer1.ServerReport.ReportServerCredentials.NetworkCredentials =
+                myCred;
+
+            if (comboBox3.SelectedItem.ToString() == "test1")
+            {                                
+                serverReport.ReportPath =
+                    "/NewReports/test1";              
+            }
+            else if (comboBox3.SelectedItem.ToString() == "test2")
+            {                                        
+                serverReport.ReportPath =
+                    "/NewReports/test2";
+            }
+            else if (comboBox3.SelectedItem.ToString() == "test3")
+            {                                     
+                serverReport.ReportPath =
+                    "/NewReports/test3";
+            }
+            reportViewer1.RefreshReport();
+        }  
+}
 }
