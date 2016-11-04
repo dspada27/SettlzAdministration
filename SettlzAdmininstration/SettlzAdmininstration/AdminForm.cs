@@ -20,8 +20,9 @@ namespace SettlzAdmininstration
     public partial class AdminForm : Form
     {
         PollsTableAdapter pollsTableAdapter1 = new PollsTableAdapter();
-        masterDataSet3.PollsDataTable dtRecord = new masterDataSet3.PollsDataTable();
-        String sqlconn = "data source=142.55.49.224;initial catalog=master;persist security info=True;user id=sa;Password=Devtech1$;MultipleActiveResultSets=True;App=EntityFramework&quot;";
+        UsersTableAdapter userTableAdapter1 = new UsersTableAdapter();
+        masterDataSet3.PollsDataTable pollRecord = new masterDataSet3.PollsDataTable();
+        masterDataSet3.UsersDataTable userRecord = new masterDataSet3.UsersDataTable();
 
         public AdminForm()
         {
@@ -32,26 +33,23 @@ namespace SettlzAdmininstration
         {
             try
             {
-                dtRecord.Clear();
+                pollRecord.Clear();
                 dataGridView1.DataSource = null;
 
                 if (comboBox1.SelectedItem.ToString() == "All Polls")
                 {
-                    pollsTableAdapter1.Fill(dtRecord);
+                    pollsTableAdapter1.FillByAll(pollRecord);
                 }
                 else if (comboBox1.SelectedItem.ToString() == "Expired Polls")
                 {
-                    pollsTableAdapter1.FillByExpiry(dtRecord);
+                    pollsTableAdapter1.FillByExpiry(pollRecord);
                 }
                 else if (comboBox1.SelectedItem.ToString() == "Reported Polls")
                 {
-                    pollsTableAdapter1.FillBy(dtRecord);
+                    pollsTableAdapter1.FillByReported(pollRecord);
                 }
-                SqlConnection con = new SqlConnection(sqlconn);
-                con.Open();
 
-                dataGridView1.DataSource = dtRecord;
-                con.Close();
+                dataGridView1.DataSource = pollRecord;
             }
             catch (SqlException ex)
             {
@@ -68,7 +66,7 @@ namespace SettlzAdmininstration
         {
             try
             {
-                pollsTableAdapter1.Update(dtRecord);
+                pollsTableAdapter1.Update(pollRecord);
                 String msg = "Row(s) Updated";
                 System.Windows.Forms.MessageBox.Show(msg);
             }
@@ -77,7 +75,13 @@ namespace SettlzAdmininstration
 
         private void updatebtn2_Click(object sender, EventArgs e)
         {
-       
+            try
+            {
+                usersTableAdapter1.Update(userRecord);
+                String msg = "Row(s) Updated";
+                System.Windows.Forms.MessageBox.Show(msg);
+            }
+            catch (Exception ex) { }
         }
 
         private void deletebtn1_Click(object sender, EventArgs e)
@@ -95,7 +99,7 @@ namespace SettlzAdmininstration
                     dataGridView1.Rows.Remove(rowToRemove);
                 }
             }
-            this.pollsTableAdapter.Update(this.masterDataSet.Polls);
+          pollsTableAdapter1.Update(pollRecord);
         }
 
         private void deletebtn_Click(object sender, EventArgs e)
@@ -113,60 +117,35 @@ namespace SettlzAdmininstration
                     dataGridView2.Rows.Remove(rowToRemove);
                 }
             }
-            this.usersTableAdapter1.Update(this.masterDataSet3.Users);
-        }
-
-        private void tabPage3_Click(object sender, EventArgs e)
-        {
-
+            usersTableAdapter1.Update(userRecord);
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-                try
+            try
+            {
+                userRecord.Clear();
+                dataGridView2.DataSource = null;
+
+                if (comboBox2.SelectedItem.ToString() == "All Users")
                 {
-                    dataGridView2.DataSource = null;
-
-                    String query = null;
-
-                    if (comboBox2.SelectedItem.ToString() == "All Users")
-                    {
-                        query = "SELECT UserId, banned, email FROM Users";
-                    }
-                    else if (comboBox2.SelectedItem.ToString() == "Banned Users")
-                    {
-                        query = "SELECT UserId, banned, email FROM Users WHERE banned = 1";
-                    }
-                    else if (comboBox2.SelectedItem.ToString() == "Active Users")
-                    {
-                        query = "SELECT UserId, banned, email FROM Users WHERE banned = 0";
-                    }
-                    String sqlconn = "data source=142.55.49.224;initial catalog=master;persist security info=True;user id=sa;Password=Devtech1$;MultipleActiveResultSets=True;App=EntityFramework&quot;";
-                    SqlConnection con = new SqlConnection(sqlconn);
-                    con.Open();
-
-                    SqlCommand sqlCmd = new SqlCommand();
-                    sqlCmd.Connection = con;
-                    sqlCmd.CommandType = CommandType.Text;
-                    sqlCmd.CommandText = query;
-                    Console.WriteLine(query);
-
-                    SqlDataAdapter usersTableAdapter = new SqlDataAdapter(sqlCmd);
-
-                    DataTable dtRecord = new DataTable();
-                    usersTableAdapter.Fill(dtRecord);
-                    dataGridView2.DataSource = dtRecord;
-                    con.Close();
+                    usersTableAdapter1.FillByAll(userRecord);
                 }
-                catch (SqlException ex)
+                else if (comboBox2.SelectedItem.ToString() == "Banned Users")
                 {
-
+                    usersTableAdapter1.FillByBanned(userRecord);
                 }
+                else if (comboBox2.SelectedItem.ToString() == "Active Users")
+                {
+                    usersTableAdapter1.FillByActive(userRecord);
+                }
+
+                dataGridView2.DataSource = userRecord;
             }
+            catch (SqlException ex)
+            {
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            }
         }
    
         private void comboBox3_SelectedIndexChanged_1(object sender, EventArgs e)

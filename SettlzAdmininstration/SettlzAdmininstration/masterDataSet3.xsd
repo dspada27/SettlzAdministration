@@ -9,7 +9,7 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UsersTableAdapter" GeneratorDataComponentClassName="UsersTableAdapter" Name="Users" UserDataComponentName="UsersTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="masterConnectionString (Settings)" DbObjectName="master.dbo.Users" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="masterConnectionString (Settings)" DbObjectName="master.dbo.Users" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByAll" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByAll" GeneratorSourceName="FillByAll" GetMethodModifier="Public" GetMethodName="GetDataByAll" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByAll" UserSourceName="FillByAll">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [Users] WHERE (([UserId] = @Original_UserId) AND ([Banned] = @Original_Banned))</CommandText>
@@ -58,11 +58,32 @@ SELECT UserId, Email, Banned FROM Users WHERE (UserId = @UserId)</CommandText>
               <Mapping SourceColumn="Email" DataSetColumn="Email" />
               <Mapping SourceColumn="Banned" DataSetColumn="Banned" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="masterConnectionString (Settings)" DbObjectName="master.dbo.Users" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByActive" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByActive" GeneratorSourceName="FillByActive" GetMethodModifier="Public" GetMethodName="GetDataByActive" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByActive" UserSourceName="FillByActive">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        UserId, Email, Banned
+FROM            Users
+WHERE        (Banned = 0)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="masterConnectionString (Settings)" DbObjectName="master.dbo.Users" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByBanned" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByBanned" GeneratorSourceName="FillByBanned" GetMethodModifier="Public" GetMethodName="GetDataByBanned" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByBanned" UserSourceName="FillByBanned">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        UserId, Email, Banned
+FROM            Users
+WHERE        (Banned = 1)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PollsTableAdapter" GeneratorDataComponentClassName="PollsTableAdapter" Name="Polls" UserDataComponentName="PollsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="masterConnectionString (Settings)" DbObjectName="master.dbo.Polls" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="masterConnectionString (Settings)" DbObjectName="master.dbo.Polls" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByAll" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByAll" GeneratorSourceName="FillByAll" GetMethodModifier="Public" GetMethodName="GetDataByAll" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByAll" UserSourceName="FillByAll">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Polls] WHERE (([PollId] = @Original_PollId) AND ([ReportCount] = @Original_ReportCount) AND ([PollStatus] = @Original_PollStatus) AND ([ExpiryDate] = @Original_ExpiryDate) AND ([CategoryCategoryId] = @Original_CategoryCategoryId) AND ((@IsNull_User_UserId = 1 AND [User_UserId] IS NULL) OR ([User_UserId] = @Original_User_UserId)))</CommandText>
@@ -117,22 +138,22 @@ SELECT PollId, Argument, ReportCount, PollStatus, ExpiryDate, CategoryCategoryId
               <Mapping SourceColumn="User_UserId" DataSetColumn="User_UserId" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="masterConnectionString (Settings)" DbObjectName="master.dbo.Polls" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        PollId, Argument, ReportCount, PollStatus, ExpiryDate, CategoryCategoryId, User_UserId
-FROM            Polls
-WHERE        (ReportCount &gt;= 1)</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
               <DbSource ConnectionRef="masterConnectionString (Settings)" DbObjectName="master.dbo.Polls" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByExpiry" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataExpiry" GeneratorSourceName="FillByExpiry" GetMethodModifier="Public" GetMethodName="GetDataExpiry" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataExpiry" UserSourceName="FillByExpiry">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        PollId, Argument, ReportCount, PollStatus, ExpiryDate, CategoryCategoryId, User_UserId
 FROM            Polls
 WHERE        (ExpiryDate &lt;= GETDATE())</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="masterConnectionString (Settings)" DbObjectName="master.dbo.Polls" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByReported" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByReported" GeneratorSourceName="FillByReported" GetMethodModifier="Public" GetMethodName="GetDataByReported" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByReported" UserSourceName="FillByReported">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        PollId, Argument, ReportCount, PollStatus, ExpiryDate, CategoryCategoryId, User_UserId
+FROM            Polls
+WHERE        (ReportCount &gt;= 1)</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
