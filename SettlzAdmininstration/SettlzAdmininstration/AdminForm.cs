@@ -162,7 +162,7 @@ namespace SettlzAdmininstration
             if (comboBox3.SelectedItem.ToString() == "test1")
             {                                
                 serverReport.ReportPath =
-                    "/NewReports/test1";              
+                    "/NewReports/user";              
             }
             else if (comboBox3.SelectedItem.ToString() == "test2")
             {                                        
