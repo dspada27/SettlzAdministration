@@ -36,11 +36,12 @@
             this.userTextBox = new System.Windows.Forms.TextBox();
             this.passTextBox = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // LoginBtn
             // 
-            this.LoginBtn.Location = new System.Drawing.Point(236, 196);
+            this.LoginBtn.Location = new System.Drawing.Point(225, 146);
             this.LoginBtn.Name = "LoginBtn";
             this.LoginBtn.Size = new System.Drawing.Size(75, 23);
             this.LoginBtn.TabIndex = 0;
@@ -53,18 +54,18 @@
             this.usernamelbl.AutoSize = true;
             this.usernamelbl.Location = new System.Drawing.Point(90, 61);
             this.usernamelbl.Name = "usernamelbl";
-            this.usernamelbl.Size = new System.Drawing.Size(55, 13);
+            this.usernamelbl.Size = new System.Drawing.Size(58, 13);
             this.usernamelbl.TabIndex = 1;
-            this.usernamelbl.Text = "Username";
+            this.usernamelbl.Text = "Username:";
             // 
             // passwordlbl
             // 
             this.passwordlbl.AutoSize = true;
             this.passwordlbl.Location = new System.Drawing.Point(90, 93);
             this.passwordlbl.Name = "passwordlbl";
-            this.passwordlbl.Size = new System.Drawing.Size(53, 13);
+            this.passwordlbl.Size = new System.Drawing.Size(56, 13);
             this.passwordlbl.TabIndex = 2;
-            this.passwordlbl.Text = "Password";
+            this.passwordlbl.Text = "Password:";
             // 
             // userTextBox
             // 
@@ -86,12 +87,22 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(212, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Administation Portal";
+            // 
             // Settlz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(547, 261);
+            this.ClientSize = new System.Drawing.Size(493, 219);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.passTextBox);
             this.Controls.Add(this.userTextBox);
             this.Controls.Add(this.passwordlbl);
@@ -114,6 +125,7 @@
         private System.Windows.Forms.TextBox userTextBox;
         private System.Windows.Forms.TextBox passTextBox;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
