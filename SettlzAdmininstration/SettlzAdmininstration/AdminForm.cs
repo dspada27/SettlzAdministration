@@ -99,7 +99,7 @@ namespace SettlzAdmininstration
                     dataGridView1.Rows.Remove(rowToRemove);
                 }
             }
-          pollsTableAdapter1.Update(pollRecord);
+            pollsTableAdapter1.Update(pollRecord);
         }
 
         private void deletebtn_Click(object sender, EventArgs e)
@@ -147,34 +147,34 @@ namespace SettlzAdmininstration
 
             }
         }
-   
-        private void comboBox3_SelectedIndexChanged_1(object sender, EventArgs e)
-        {         
-            ServerReport serverReport = reportViewer1.ServerReport;
-            serverReport.ReportServerUrl = new Uri("http://142.55.49.224/ReportServer");
 
-            //Passing credentials for the server to login to avoid 401 unathorized msg
-            System.Net.NetworkCredential myCred = new
-               NetworkCredential("csadmin", "$PleaseChangeMe2015$", "");
-            reportViewer1.ServerReport.ReportServerCredentials.NetworkCredentials =
-                myCred;
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+            {
+                ServerReport serverReport = reportViewer1.ServerReport;
+                serverReport.ReportServerUrl = new Uri("http://142.55.49.224/ReportServer");
 
-            if (comboBox3.SelectedItem.ToString() == "SharingReport")
-            {                                
-                serverReport.ReportPath =
-                    "/NewReports/SharingReport";              
+                //Passing credentials for the server to login to avoid 401 unathorized msg
+                System.Net.NetworkCredential myCred = new
+                   NetworkCredential("csadmin", "$PleaseChangeMe2015$", "");
+                reportViewer1.ServerReport.ReportServerCredentials.NetworkCredentials =
+                    myCred;
+
+                if (comboBox3.SelectedItem.ToString() == "Sharing Report")
+                {
+                    serverReport.ReportPath =
+                        "/NewReports/SharingReport";
+                }
+                else if (comboBox3.SelectedItem.ToString() == "Category Report")
+                {
+                    serverReport.ReportPath =
+                        "/NewReports/CategoryReport";
+                }
+                else if (comboBox3.SelectedItem.ToString() == "test 3")
+                {
+                    serverReport.ReportPath =
+                        "/NewReports/test3";
+                }
+                reportViewer1.RefreshReport();
             }
-            else if (comboBox3.SelectedItem.ToString() == "CategoryReport")
-            {                                        
-                serverReport.ReportPath =
-                    "/NewReports/CategoryReport";
-            }
-            else if (comboBox3.SelectedItem.ToString() == "test3")
-            {                                     
-                serverReport.ReportPath =
-                    "/NewReports/test3";
-            }
-            reportViewer1.RefreshReport();
-        }  
-}
+    }
 }

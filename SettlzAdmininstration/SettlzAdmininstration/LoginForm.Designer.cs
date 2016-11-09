@@ -90,13 +90,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(547, 261);
             this.Controls.Add(this.passTextBox);
             this.Controls.Add(this.userTextBox);
             this.Controls.Add(this.passwordlbl);
             this.Controls.Add(this.usernamelbl);
             this.Controls.Add(this.LoginBtn);
-            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Settlz";
             this.Text = "Settlz";
