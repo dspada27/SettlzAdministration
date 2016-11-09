@@ -50,6 +50,7 @@
             this.Selected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Banned = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.pollsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.masterDataSet = new SettlzAdmininstration.masterDataSet();
@@ -59,7 +60,6 @@
             this.usersTableAdapter1 = new SettlzAdmininstration.masterDataSet3TableAdapters.UsersTableAdapter();
             this.pollsTableAdapter = new SettlzAdmininstration.masterDataSetTableAdapters.PollsTableAdapter();
             this.masterDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.TabControl.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -97,6 +97,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.Color.LightBlue;
             this.tabPage2.Controls.Add(this.deletebtn1);
             this.tabPage2.Controls.Add(this.updatebtn);
             this.tabPage2.Controls.Add(this.dataGridView1);
@@ -108,7 +109,6 @@
             this.tabPage2.Size = new System.Drawing.Size(1054, 485);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Polls";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // deletebtn1
             // 
@@ -178,6 +178,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.BackColor = System.Drawing.Color.LightBlue;
             this.tabPage3.Controls.Add(this.Combolbl2);
             this.tabPage3.Controls.Add(this.comboBox2);
             this.tabPage3.Controls.Add(this.deletebtn);
@@ -188,7 +189,6 @@
             this.tabPage3.Size = new System.Drawing.Size(1054, 485);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Users";
-            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // Combolbl2
             // 
@@ -259,6 +259,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.BackColor = System.Drawing.Color.LightBlue;
             this.tabPage4.Controls.Add(this.comboBox3);
             this.tabPage4.Controls.Add(this.reportViewer1);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
@@ -266,10 +267,23 @@
             this.tabPage4.Size = new System.Drawing.Size(1054, 485);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Reports";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Sharing Report",
+            "Category Report",
+            "Test 3"});
+            this.comboBox3.Location = new System.Drawing.Point(9, 35);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(121, 21);
+            this.comboBox3.TabIndex = 1;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
             // reportViewer1
             // 
+            this.reportViewer1.BackColor = System.Drawing.Color.LightBlue;
             this.reportViewer1.Location = new System.Drawing.Point(9, 93);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Remote;
@@ -309,19 +323,6 @@
             // 
             this.masterDataSetBindingSource.DataSource = this.masterDataSet;
             this.masterDataSetBindingSource.Position = 0;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "Sharing Report",
-            "Category Report",
-            "Test 3"});
-            this.comboBox3.Location = new System.Drawing.Point(9, 35);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 1;
-            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
             // AdminForm
             // 
