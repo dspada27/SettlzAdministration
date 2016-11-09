@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminForm));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TabControl = new System.Windows.Forms.TabControl();
@@ -41,6 +42,7 @@
             this.combolbl = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.Combolbl2 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.deletebtn = new System.Windows.Forms.Button();
             this.updatebtn2 = new System.Windows.Forms.Button();
@@ -90,7 +92,7 @@
             this.TabControl.Location = new System.Drawing.Point(-1, 0);
             this.TabControl.Name = "TabControl";
             this.TabControl.SelectedIndex = 0;
-            this.TabControl.Size = new System.Drawing.Size(1062, 458);
+            this.TabControl.Size = new System.Drawing.Size(1062, 511);
             this.TabControl.TabIndex = 2;
             // 
             // tabPage2
@@ -103,7 +105,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1054, 432);
+            this.tabPage2.Size = new System.Drawing.Size(1054, 485);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Polls";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -136,7 +138,7 @@
             this.User_UserId});
             this.dataGridView1.Location = new System.Drawing.Point(6, 141);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1033, 285);
+            this.dataGridView1.Size = new System.Drawing.Size(1033, 338);
             this.dataGridView1.TabIndex = 3;
             // 
             // Select
@@ -176,16 +178,26 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.Combolbl2);
             this.tabPage3.Controls.Add(this.comboBox2);
             this.tabPage3.Controls.Add(this.deletebtn);
             this.tabPage3.Controls.Add(this.updatebtn2);
             this.tabPage3.Controls.Add(this.dataGridView2);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1054, 432);
+            this.tabPage3.Size = new System.Drawing.Size(1054, 485);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Users";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // Combolbl2
+            // 
+            this.Combolbl2.AutoSize = true;
+            this.Combolbl2.Location = new System.Drawing.Point(17, 20);
+            this.Combolbl2.Name = "Combolbl2";
+            this.Combolbl2.Size = new System.Drawing.Size(204, 13);
+            this.Combolbl2.TabIndex = 4;
+            this.Combolbl2.Text = "Please select an option from the list below";
             // 
             // comboBox2
             // 
@@ -194,7 +206,7 @@
             "Banned Users",
             "All Users",
             "Active Users"});
-            this.comboBox2.Location = new System.Drawing.Point(237, 44);
+            this.comboBox2.Location = new System.Drawing.Point(20, 58);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 3;
@@ -202,7 +214,7 @@
             // 
             // deletebtn
             // 
-            this.deletebtn.Location = new System.Drawing.Point(606, 89);
+            this.deletebtn.Location = new System.Drawing.Point(188, 99);
             this.deletebtn.Name = "deletebtn";
             this.deletebtn.Size = new System.Drawing.Size(75, 23);
             this.deletebtn.TabIndex = 2;
@@ -212,7 +224,7 @@
             // 
             // updatebtn2
             // 
-            this.updatebtn2.Location = new System.Drawing.Point(237, 89);
+            this.updatebtn2.Location = new System.Drawing.Point(20, 99);
             this.updatebtn2.Name = "updatebtn2";
             this.updatebtn2.Size = new System.Drawing.Size(75, 23);
             this.updatebtn2.TabIndex = 1;
@@ -226,9 +238,9 @@
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Selected,
             this.Banned});
-            this.dataGridView2.Location = new System.Drawing.Point(237, 125);
+            this.dataGridView2.Location = new System.Drawing.Point(9, 140);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(444, 304);
+            this.dataGridView2.Size = new System.Drawing.Size(444, 342);
             this.dataGridView2.TabIndex = 0;
             // 
             // Selected
@@ -251,7 +263,7 @@
             this.tabPage4.Controls.Add(this.reportViewer1);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1054, 432);
+            this.tabPage4.Size = new System.Drawing.Size(1054, 485);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Reports";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -276,7 +288,7 @@
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Remote;
             this.reportViewer1.ServerReport.ReportServerUrl = new System.Uri("", System.UriKind.Relative);
-            this.reportViewer1.Size = new System.Drawing.Size(685, 304);
+            this.reportViewer1.Size = new System.Drawing.Size(755, 350);
             this.reportViewer1.TabIndex = 0;
             // 
             // pollsBindingSource
@@ -316,16 +328,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1062, 456);
+            this.ClientSize = new System.Drawing.Size(1062, 511);
             this.Controls.Add(this.TabControl);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdminForm";
-            this.Text = "AdminForm";
+            this.Text = "Settlz";
             this.Load += new System.EventHandler(this.AdminForm_Load);
             this.TabControl.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pollsBindingSource)).EndInit();
@@ -368,5 +382,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn Banned;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Label Combolbl2;
     }
 }

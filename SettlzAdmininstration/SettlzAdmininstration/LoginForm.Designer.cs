@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Settlz));
             this.LoginBtn = new System.Windows.Forms.Button();
             this.usernamelbl = new System.Windows.Forms.Label();
             this.passwordlbl = new System.Windows.Forms.Label();
@@ -83,7 +84,7 @@
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // Settlz
             // 
@@ -95,6 +96,8 @@
             this.Controls.Add(this.passwordlbl);
             this.Controls.Add(this.usernamelbl);
             this.Controls.Add(this.LoginBtn);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Settlz";
             this.Text = "Settlz";
             this.ResumeLayout(false);
