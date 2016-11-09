@@ -159,15 +159,15 @@ namespace SettlzAdmininstration
             reportViewer1.ServerReport.ReportServerCredentials.NetworkCredentials =
                 myCred;
 
-            if (comboBox3.SelectedItem.ToString() == "test1")
+            if (comboBox3.SelectedItem.ToString() == "SharingReport")
             {                                
                 serverReport.ReportPath =
-                    "/NewReports/user";              
+                    "/NewReports/SharingReport";              
             }
-            else if (comboBox3.SelectedItem.ToString() == "test2")
+            else if (comboBox3.SelectedItem.ToString() == "CategoryReport")
             {                                        
                 serverReport.ReportPath =
-                    "/NewReports/test2";
+                    "/NewReports/CategoryReport";
             }
             else if (comboBox3.SelectedItem.ToString() == "test3")
             {                                     
