@@ -169,10 +169,10 @@ namespace SettlzAdmininstration
                     serverReport.ReportPath =
                         "/NewReports/CategoryReport";
                 }
-                else if (comboBox3.SelectedItem.ToString() == "test 3")
+                else if (comboBox3.SelectedItem.ToString() == "New Registered Users")
                 {
                     serverReport.ReportPath =
-                        "/NewReports/test3";
+                        "/NewReports/SignupsReport";
                 }
                 reportViewer1.RefreshReport();
             }

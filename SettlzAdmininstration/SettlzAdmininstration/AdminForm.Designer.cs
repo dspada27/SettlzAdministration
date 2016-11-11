@@ -50,6 +50,7 @@
             this.Selected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Banned = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.pollsBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -60,7 +61,6 @@
             this.usersTableAdapter1 = new SettlzAdmininstration.masterDataSet3TableAdapters.UsersTableAdapter();
             this.pollsTableAdapter = new SettlzAdmininstration.masterDataSetTableAdapters.PollsTableAdapter();
             this.masterDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             this.TabControl.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -270,13 +270,22 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Reports";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(204, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Please select an option from the list below";
+            // 
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Items.AddRange(new object[] {
             "Sharing Report",
             "Category Report",
-            "Test 3"});
+            "New Registered Users"});
             this.comboBox3.Location = new System.Drawing.Point(9, 48);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(121, 21);
@@ -325,15 +334,6 @@
             // 
             this.masterDataSetBindingSource.DataSource = this.masterDataSet;
             this.masterDataSetBindingSource.Position = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(204, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Please select an option from the list below";
             // 
             // AdminForm
             // 
