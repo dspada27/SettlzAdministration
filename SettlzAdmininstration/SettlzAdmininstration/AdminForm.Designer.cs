@@ -34,7 +34,6 @@
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TabControl = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.deletebtn1 = new System.Windows.Forms.Button();
             this.updatebtn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -44,7 +43,6 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.Combolbl2 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.deletebtn = new System.Windows.Forms.Button();
             this.updatebtn2 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Selected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -99,7 +97,6 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.LightBlue;
-            this.tabPage2.Controls.Add(this.deletebtn1);
             this.tabPage2.Controls.Add(this.updatebtn);
             this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Controls.Add(this.combolbl);
@@ -110,16 +107,6 @@
             this.tabPage2.Size = new System.Drawing.Size(1054, 485);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Polls";
-            // 
-            // deletebtn1
-            // 
-            this.deletebtn1.Location = new System.Drawing.Point(186, 94);
-            this.deletebtn1.Name = "deletebtn1";
-            this.deletebtn1.Size = new System.Drawing.Size(75, 23);
-            this.deletebtn1.TabIndex = 5;
-            this.deletebtn1.Text = "Delete";
-            this.deletebtn1.UseVisualStyleBackColor = true;
-            this.deletebtn1.Click += new System.EventHandler(this.deletebtn1_Click);
             // 
             // updatebtn
             // 
@@ -182,7 +169,6 @@
             this.tabPage3.BackColor = System.Drawing.Color.LightBlue;
             this.tabPage3.Controls.Add(this.Combolbl2);
             this.tabPage3.Controls.Add(this.comboBox2);
-            this.tabPage3.Controls.Add(this.deletebtn);
             this.tabPage3.Controls.Add(this.updatebtn2);
             this.tabPage3.Controls.Add(this.dataGridView2);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
@@ -212,16 +198,6 @@
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 3;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
-            // 
-            // deletebtn
-            // 
-            this.deletebtn.Location = new System.Drawing.Point(188, 99);
-            this.deletebtn.Name = "deletebtn";
-            this.deletebtn.Size = new System.Drawing.Size(75, 23);
-            this.deletebtn.TabIndex = 2;
-            this.deletebtn.Text = "Delete";
-            this.deletebtn.UseVisualStyleBackColor = true;
-            this.deletebtn.Click += new System.EventHandler(this.deletebtn_Click);
             // 
             // updatebtn2
             // 
@@ -382,8 +358,6 @@
         private System.Windows.Forms.BindingSource masterDataSetBindingSource;
         private System.Windows.Forms.BindingSource usersBindingSource;
         private System.Windows.Forms.Button updatebtn2;
-        private System.Windows.Forms.Button deletebtn;
-        private System.Windows.Forms.Button deletebtn1;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private masterDataSet3 masterDataSet3;
         private System.Windows.Forms.BindingSource usersBindingSource1;
