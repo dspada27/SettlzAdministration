@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("SettlzAdmininstration")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Settlz is a Capstone Project developed by Daniel Spadafora, Sagar Patel, William Chan, Jorelle Bantog")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("DevTech")]
 [assembly: AssemblyProduct("SettlzAdmininstration")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
