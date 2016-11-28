@@ -261,7 +261,8 @@
             this.comboBox3.Items.AddRange(new object[] {
             "Sharing Report",
             "Category Report",
-            "New Registered Users"});
+            "New Registered Users",
+            "Most Popular Polls"});
             this.comboBox3.Location = new System.Drawing.Point(9, 48);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(121, 21);

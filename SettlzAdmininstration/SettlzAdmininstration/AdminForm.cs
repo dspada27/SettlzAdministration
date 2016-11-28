@@ -153,13 +153,16 @@ namespace SettlzAdmininstration
                 ServerReport serverReport = reportViewer1.ServerReport;
                 serverReport.ReportServerUrl = new Uri("http://142.55.49.224/ReportServer");
 
+
                 //Passing credentials for the server to login to avoid 401 unathorized msg
                 System.Net.NetworkCredential myCred = new
                    NetworkCredential("csadmin", "$PleaseChangeMe2015$", "");
                 reportViewer1.ServerReport.ReportServerCredentials.NetworkCredentials =
                     myCred;
+         
 
-                if (comboBox3.SelectedItem.ToString() == "Sharing Report")
+
+            if (comboBox3.SelectedItem.ToString() == "Sharing Report")
                 {
                     serverReport.ReportPath =
                         "/NewReports/SharingReport";
@@ -174,6 +177,11 @@ namespace SettlzAdmininstration
                     serverReport.ReportPath =
                         "/NewReports/SignupsReport";
                 }
+            else if (comboBox3.SelectedItem.ToString() == "Most Popular Polls")
+            {
+                serverReport.ReportPath =
+                    "/NewReports/PopularPollsReport";
+            }
                 reportViewer1.RefreshReport();
             }
     }
