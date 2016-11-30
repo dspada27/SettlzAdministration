@@ -51,11 +51,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pollsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.masterDataSet = new SettlzAdmininstration.masterDataSet();
             this.usersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.masterDataSet3 = new SettlzAdmininstration.masterDataSet3();
-            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usersTableAdapter1 = new SettlzAdmininstration.masterDataSet3TableAdapters.UsersTableAdapter();
             this.pollsTableAdapter = new SettlzAdmininstration.masterDataSetTableAdapters.PollsTableAdapter();
             this.masterDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -65,11 +65,11 @@
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pollsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.masterDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.masterDataSet3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.masterDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,7 +91,7 @@
             this.TabControl.Location = new System.Drawing.Point(-1, 0);
             this.TabControl.Name = "TabControl";
             this.TabControl.SelectedIndex = 0;
-            this.TabControl.Size = new System.Drawing.Size(1062, 511);
+            this.TabControl.Size = new System.Drawing.Size(1027, 511);
             this.TabControl.TabIndex = 2;
             // 
             // tabPage2
@@ -104,7 +104,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1054, 485);
+            this.tabPage2.Size = new System.Drawing.Size(1019, 485);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Polls";
             // 
@@ -126,7 +126,7 @@
             this.User_UserId});
             this.dataGridView1.Location = new System.Drawing.Point(6, 141);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1033, 338);
+            this.dataGridView1.Size = new System.Drawing.Size(999, 338);
             this.dataGridView1.TabIndex = 3;
             // 
             // Select
@@ -173,7 +173,7 @@
             this.tabPage3.Controls.Add(this.dataGridView2);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1054, 485);
+            this.tabPage3.Size = new System.Drawing.Size(1019, 485);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Users";
             // 
@@ -242,7 +242,7 @@
             this.tabPage4.Controls.Add(this.reportViewer1);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1054, 485);
+            this.tabPage4.Size = new System.Drawing.Size(1019, 485);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Reports";
             // 
@@ -276,7 +276,7 @@
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Remote;
             this.reportViewer1.ServerReport.ReportServerUrl = new System.Uri("", System.UriKind.Relative);
-            this.reportViewer1.Size = new System.Drawing.Size(1028, 384);
+            this.reportViewer1.Size = new System.Drawing.Size(984, 384);
             this.reportViewer1.TabIndex = 0;
             // 
             // pollsBindingSource
@@ -317,7 +317,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(1062, 511);
+            this.ClientSize = new System.Drawing.Size(1008, 511);
             this.Controls.Add(this.TabControl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdminForm";
@@ -332,11 +332,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pollsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.masterDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.masterDataSet3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.masterDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
